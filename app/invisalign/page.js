@@ -24,7 +24,7 @@ export default function Page() {
     <>
       <Schema>{graph(faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "Invisalign", path: "/invisalign" }]))}</Schema>
-      <PageHero image="/images/office-waiting.jpg" pos="center 45%" eyebrow="Invisalign & orthodontics"
+      <PageHero image="/images/invisalign-hero.svg" pos="center 55%" eyebrow="Invisalign & orthodontics"
         title="Straighter teeth, on your schedule"
         lead="Clear aligner therapy moves your teeth discreetly — no brackets, no wires, and no interruption to how you eat, speak, or look while it happens." />
       <Reviewed />

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760">
+  <rect width="1400" height="760" fill="#f1e9dc"/>
+  <!-- dental arch: stylized upper teeth along a smile curve -->
+  <g stroke="#c8102e" stroke-width="7" fill="#faf6ef" stroke-linejoin="round">
+    <path d="M 340 420 q 10 -90 60 -92 q 50 2 58 88 q 2 46 -28 52 q -32 6 -62 -4 q -26 -10 -28 -44 z"/>
+    <path d="M 480 388 q 6 -96 58 -98 q 54 2 60 94 q 2 50 -30 56 q -34 6 -60 -2 q -26 -10 -28 -50 z"/>
+    <path d="M 622 366 q 4 -102 60 -104 q 58 2 62 100 q 0 54 -32 60 q -34 6 -60 -2 q -28 -10 -30 -54 z"/>
+    <path d="M 768 362 q 4 -100 58 -102 q 56 2 62 98 q 2 52 -30 58 q -34 8 -62 0 q -26 -10 -28 -54 z"/>
+    <path d="M 912 384 q 6 -94 56 -96 q 52 2 58 92 q 2 48 -28 54 q -32 6 -58 -2 q -26 -8 -28 -48 z"/>
+    <path d="M 1048 418 q 8 -86 54 -88 q 48 2 54 84 q 2 44 -26 50 q -30 6 -56 -2 q -24 -8 -26 -44 z"/>
+  </g>
+  <!-- aligner tray: sweeping translucent arc hugging the teeth -->
+  <path d="M 300 470 Q 700 560 1140 466" fill="none" stroke="#c8102e" stroke-width="10" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 316 502 Q 700 596 1124 498" fill="none" stroke="#c8102e" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 22" opacity="0.7"/>
+  <!-- gum line hint above -->
+  <path d="M 320 330 Q 700 232 1090 328" fill="none" stroke="#c8102e" stroke-width="5" stroke-linecap="round" opacity="0.30"/>
+</svg>
