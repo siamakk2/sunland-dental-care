@@ -24,8 +24,8 @@ export default function Home() {
       <section className="relative overflow-hidden border-b border-line">
         <div className="absolute inset-0">
           <img src={DOCTOR.heroPhoto} alt="Dr. Mahvash Emami, DDS in the Sunland Dental Care office"
-               className="h-full w-full object-cover object-[72%_18%] opacity-[.42]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/85 to-cream/25" />
+               className="h-full w-full object-cover object-[72%_18%] opacity-[.62]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/70 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-transparent" />
         </div>
         <div className="relative mx-auto max-w-6xl px-4 py-20 md:py-28">

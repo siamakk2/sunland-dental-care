@@ -6,8 +6,8 @@ export function PageHero({ eyebrow, title, lead, image = "/images/dr-emami-hero.
     <section className="relative overflow-hidden border-b border-line">
       <div className="absolute inset-0">
         <img src={image} alt="" aria-hidden="true"
-             className="h-full w-full object-cover opacity-[.32]" style={{ objectPosition: pos }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/85 to-cream/30" />
+             className="h-full w-full object-cover opacity-[.55]" style={{ objectPosition: pos }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/70 to-cream/10" />
         <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-transparent" />
       </div>
       <div className="relative mx-auto max-w-6xl px-4 py-16 md:py-24">

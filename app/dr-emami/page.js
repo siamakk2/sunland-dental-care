@@ -35,8 +35,8 @@ export default function DrEmami() {
       {/* ── Profile hero ── */}
       <section className="relative overflow-hidden border-b border-line">
         <div className="absolute inset-0">
-          <img src="/images/dr-emami-hero.jpg" alt="" aria-hidden="true" className="h-full w-full object-cover object-[72%_18%] opacity-[.30]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/85 to-cream/30" />
+          <img src="/images/dr-emami-hero.jpg" alt="" aria-hidden="true" className="h-full w-full object-cover object-[72%_18%] opacity-[.45]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/75 to-cream/15" />
           <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-transparent" />
         </div>
         <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-[.72fr_1fr] md:py-20">
