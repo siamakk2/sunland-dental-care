@@ -1,6 +1,7 @@
 import { NAP, DOCTOR } from "../../lib/practice";
 import { Schema, graph, breadcrumbs } from "../../lib/schema";
 import { PageHero, Cta } from "../../components/blocks";
+import ContactForm from "../../components/ContactForm";
 
 export const metadata = {
   title: "Contact & Location — Sunland Dental Care, Sunland CA",
@@ -12,7 +13,7 @@ export default function Page() {
   return (
     <>
       <Schema>{graph(breadcrumbs([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]))}</Schema>
-      <PageHero eyebrow="Contact & location" title="On Foothill Boulevard since 1991"
+      <PageHero image="/images/office-waiting.jpg" pos="center 45%" eyebrow="Contact & location" title="On Foothill Boulevard since 1991"
         lead="Call, email, or come by — the office is easy to find in the heart of Sunland-Tujunga." />
       <section className="mx-auto grid max-w-6xl gap-6 px-4 py-14 md:grid-cols-3">
         <div className="rounded-2xl border border-line bg-white/60 p-6">
@@ -31,8 +32,9 @@ export default function Page() {
           <p className="mt-2 text-sm text-ink-soft">Mon–Fri 9:00 AM – 5:00 PM<br/>Sat–Sun Closed</p>
         </div>
       </section>
-      <section className="mx-auto max-w-6xl px-4">
-        <iframe title="Map to Sunland Dental Care" className="h-96 w-full rounded-2xl border border-line"
+      <section className="mx-auto grid max-w-6xl gap-6 px-4 pb-10 md:grid-cols-[1.05fr_.95fr]">
+        <ContactForm />
+        <iframe title="Map to Sunland Dental Care" className="h-full min-h-96 w-full rounded-3xl border border-line"
           loading="lazy" referrerPolicy="no-referrer-when-downgrade"
           src={`https://www.google.com/maps?q=${encodeURIComponent('Sunland Dental Care 7902 Foothill Blvd Sunland CA 91040')}&output=embed`} />
       </section>

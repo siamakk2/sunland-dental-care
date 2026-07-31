@@ -11,7 +11,11 @@ export const metadata = {
     template: `%s | ${SITE.name}`,
   },
   description: `${SITE.name} is the implant-focused dental practice of ${DOCTOR.name}, serving Sunland-Tujunga since ${DOCTOR.established}. Complete $2,000 dental implants, 3D-guided surgery, cosmetic dentistry, and Invisalign at ${NAP.street}, ${NAP.city}, CA. Call ${NAP.phone}.`,
-  openGraph: { siteName: SITE.name, locale: "en_US", type: "website" },
+  openGraph: {
+    siteName: SITE.name, locale: "en_US", type: "website",
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Sunland Dental Care — Dr. Mahvash Emami, DDS" }],
+  },
+  twitter: { card: "summary_large_image", images: ["/og.jpg"] },
   robots: { index: true, follow: true },
 };
 

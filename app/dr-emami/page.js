@@ -6,7 +6,6 @@ export const metadata = {
   title: "Meet Dr. Mahvash Emami, DDS — 40 Years of Implant Dentistry",
   description: `${DOCTOR.name} is an implantology specialist in Sunland, CA with ${DOCTOR.yearsExperience} years of clinical experience and thousands of implants placed. Founder of Sunland Dental Care, serving the same Foothill Blvd community since ${DOCTOR.established}.`,
   alternates: { canonical: "/dr-emami" },
-  openGraph: { images: [DOCTOR.photo] },
 };
 
 const PAGE_FAQS = [
@@ -34,8 +33,13 @@ export default function DrEmami() {
       ]))}</Schema>
 
       {/* ── Profile hero ── */}
-      <section className="border-b border-line bg-parchment/60">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-[.72fr_1fr] md:py-20">
+      <section className="relative overflow-hidden border-b border-line">
+        <div className="absolute inset-0">
+          <img src="/images/dr-emami-hero.jpg" alt="" aria-hidden="true" className="h-full w-full object-cover object-[72%_18%] opacity-[.30]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/85 to-cream/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-transparent" />
+        </div>
+        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-[.72fr_1fr] md:py-20">
           <img src={DOCTOR.photo} alt={`${DOCTOR.name}, implantology specialist at Sunland Dental Care in Sunland, CA`}
                className="mx-auto w-full max-w-sm rounded-3xl border border-line shadow-md" />
           <div>

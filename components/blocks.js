@@ -1,10 +1,16 @@
 import Link from "next/link";
 import { NAP, DOCTOR } from "../lib/practice";
 
-export function PageHero({ eyebrow, title, lead }) {
+export function PageHero({ eyebrow, title, lead, image = "/images/dr-emami-hero.jpg", pos = "center" }) {
   return (
-    <section className="border-b border-line bg-parchment/60">
-      <div className="mx-auto max-w-6xl px-4 py-14 md:py-18">
+    <section className="relative overflow-hidden border-b border-line">
+      <div className="absolute inset-0">
+        <img src={image} alt="" aria-hidden="true"
+             className="h-full w-full object-cover opacity-[.32]" style={{ objectPosition: pos }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/85 to-cream/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-transparent" />
+      </div>
+      <div className="relative mx-auto max-w-6xl px-4 py-16 md:py-24">
         <p className="eyebrow text-brand">{eyebrow}</p>
         <h1 className="mt-3 max-w-3xl text-4xl font-semibold md:text-5xl">{title}</h1>
         {lead && <p className="mt-5 max-w-2xl text-lg text-ink-soft">{lead}</p>}
