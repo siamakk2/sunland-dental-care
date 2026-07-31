@@ -24,7 +24,7 @@ export default function Page() {
     <>
       <Schema>{graph(faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "General Dentistry", path: "/general-dentistry" }]))}</Schema>
-      <PageHero image="/images/dr-emami-office.jpg" pos="center 25%" eyebrow="General & family dentistry"
+      <PageHero image="/images/hero-exam.jpg" pos="center 30%" eyebrow="General & family dentistry"
         title="The kind of dentistry that keeps you out of the chair"
         lead="Prevention, early diagnosis, and conservative treatment — for every member of the family, from first visits to grandparents who've been coming since 1991." />
       <Reviewed />

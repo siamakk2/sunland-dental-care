@@ -24,7 +24,7 @@ function Header() {
     <header className="sticky top-0 z-40 border-b border-line bg-cream/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <Link href="/" className="flex items-center">
-          <img src="/images/logo.png" alt="Sunland Dental Care" className="h-9 w-auto md:h-10" />
+          <img src="/images/logo.png" alt="Sunland Dental Care" className="h-12 w-auto md:h-14" />
         </Link>
         <nav className="hidden items-center gap-5 text-sm md:flex">
           {NAV.map((n) => (
@@ -49,7 +49,7 @@ function Footer() {
     <footer className="mt-20 border-t border-line bg-parchment">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-3">
         <div>
-          <img src="/images/logo.png" alt="Sunland Dental Care" className="h-10 w-auto" />
+          <img src="/images/logo.png" alt="Sunland Dental Care" className="h-14 w-auto" />
           <p className="mt-3 text-sm text-ink-soft">
             {DOCTOR.name} — implant-focused, minimally invasive dentistry serving
             Sunland-Tujunga and the Foothill communities since {DOCTOR.established}.

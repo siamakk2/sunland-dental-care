@@ -24,7 +24,7 @@ export default function Page() {
     <>
       <Schema>{graph(faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "Cosmetic Dentistry", path: "/cosmetic-dentistry" }]))}</Schema>
-      <PageHero image="/images/dr-emami-hero.jpg" pos="72% 20%" eyebrow="Cosmetic dentistry"
+      <PageHero image="/images/dr-emami-office.jpg" pos="center 22%" eyebrow="Cosmetic dentistry"
         title="A naturally beautiful smile, designed for your face"
         lead="At Sunland Dental Care, we listen carefully to what you want to change, then design a plan around your individual goals. The result is a smile that looks like you — at your best." />
       <Reviewed />
