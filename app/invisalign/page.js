@@ -24,7 +24,7 @@ export default function Page() {
     <>
       <Schema>{graph(faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "Invisalign", path: "/invisalign" }]))}</Schema>
-      <PageHero image="/images/invisalign-hero.svg" pos="center 55%" eyebrow="Invisalign & orthodontics"
+      <PageHero image="/images/hero-aligner.jpg" pos="center 30%" eyebrow="Invisalign & orthodontics"
         title="Straighter teeth, on your schedule"
         lead="Clear aligner therapy moves your teeth discreetly — no brackets, no wires, and no interruption to how you eat, speak, or look while it happens." />
       <Reviewed />
@@ -34,6 +34,15 @@ export default function Page() {
         <h2>How treatment works here</h2>
         <p>Your case starts with imaging and a digital treatment plan, so you can see the projected result before beginning. Aligners are worn about 22 hours a day and swapped on a set schedule, with periodic check-ins at the Sunland office. Because Dr. Emami also handles restorative and cosmetic care, alignment can be sequenced into a larger smile plan when that's the goal.</p>
       </Prose>
+      <section className="mx-auto max-w-6xl px-4 pb-8">
+        <div className="grid items-center gap-8 md:grid-cols-2">
+          <img src="/images/aligner-closeup.jpg" alt="Dr. Emami holding a clear Invisalign aligner" className="rounded-3xl border border-line shadow-sm" />
+          <div>
+            <h2 className="text-3xl font-semibold">Nearly invisible, entirely custom</h2>
+            <p className="mt-4 text-ink-soft">Each aligner is manufactured for your teeth from a digital scan — thin, clear, and precise. Most people won't notice you're wearing one; you'll notice your smile changing.</p>
+          </div>
+        </div>
+      </section>
       <FaqBlock title="Invisalign questions" faqs={FAQS} />
       <Cta title="See what aligners could do for your smile" />
     </>

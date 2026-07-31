@@ -136,6 +136,19 @@ export default function DrEmami() {
         </div>
       </section>
 
+      {/* ── Video ── */}
+      <section className="border-t border-line">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-[.6fr_1fr]">
+          <video className="mx-auto w-full max-w-xs rounded-3xl border border-line shadow-md" controls playsInline preload="none"
+                 poster="/images/video-poster.jpg" src="/images/dr-emami-video.mp4" aria-label="Short video of Dr. Emami in the office" />
+          <div>
+            <p className="eyebrow text-brand">A moment with the doctor</p>
+            <h2 className="mt-3 text-3xl font-semibold">Precision you can see</h2>
+            <p className="mt-4 text-ink-soft">Eight seconds says it: steady hands, modern tools, and the calm of someone who has done this thousands of times. This is the doctor who will plan, place, and finish your treatment personally.</p>
+          </div>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section className="border-t border-line bg-parchment/60">
         <div className="mx-auto max-w-4xl px-4 py-16">
