@@ -3,6 +3,7 @@ import "@fontsource-variable/inter";
 import "./globals.css";
 import Link from "next/link";
 import { SITE, NAP, NAV, SERVICES, MORE_SERVICES, DOCTOR } from "../lib/practice";
+import { CITIES } from "../lib/cities";
 
 export const metadata = {
   metadataBase: new URL(SITE.url),
@@ -47,7 +48,7 @@ function Header() {
 function Footer() {
   return (
     <footer className="mt-20 bg-ink pb-14 text-cream md:pb-0">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-4">
         <div>
           <img src="/images/logo.png" alt="Sunland Dental Care" className="h-14 w-auto" />
           <p className="mt-3 text-sm text-cream/70">
@@ -69,6 +70,14 @@ function Footer() {
             <li><Link className="text-cream/85 hover:text-brand-bright" href="/pricing">Pricing</Link></li>
             {MORE_SERVICES.map((s) => (
               <li key={s.slug}><Link className="text-cream/85 hover:text-brand-bright" href={`/${s.slug}`}>{s.name}</Link></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p className="eyebrow text-brand-bright">Areas served</p>
+          <ul className="mt-3 space-y-2 text-sm">
+            {CITIES.map((c) => (
+              <li key={c.slug}><Link className="text-cream/85 hover:text-brand-bright" href={`/${c.slug}`}>Dentist for {c.short}</Link></li>
             ))}
           </ul>
         </div>

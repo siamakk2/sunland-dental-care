@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SITE, NAP, DOCTOR, OFFER, AREAS, SERVICES, MORE_SERVICES } from "../lib/practice";
+import { CITIES } from "../lib/cities";
 import { Schema, graph, faqSchema, breadcrumbs } from "../lib/schema";
 import { ReviewStrip } from "../components/blocks";
 
@@ -150,9 +151,14 @@ export default function Home() {
           anywhere in Greater Los Angeles. Patients visit from:
         </p>
         <ul className="mt-6 flex flex-wrap gap-2 text-sm">
-          {AREAS.map((a) => (
-            <li key={a} className="rounded-full border border-line bg-white/60 px-3 py-1">{a}</li>
-          ))}
+          {AREAS.map((a) => {
+            const city = CITIES.find((c) => c.city === a || c.short === a);
+            return city ? (
+              <li key={a}><Link href={`/${city.slug}`} className="block rounded-full border-2 border-brand/30 bg-white px-3 py-1 font-semibold text-brand hover:bg-brand hover:text-white">{a} →</Link></li>
+            ) : (
+              <li key={a} className="rounded-full border border-line bg-white px-3 py-1">{a}</li>
+            );
+          })}
         </ul>
       </section>
 
