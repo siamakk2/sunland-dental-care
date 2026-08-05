@@ -1,5 +1,6 @@
 import { DOCTOR } from "../../lib/practice";
 import { Schema, graph, breadcrumbs, faqSchema, serviceSchema, webPage } from "../../lib/schema";
+import SmileGallery from "../../components/SmileGallery";
 import { PageHero, Reviewed, FaqBlock, Cta, Prose } from "../../components/blocks";
 
 export const metadata = {
@@ -40,6 +41,7 @@ export default function Page() {
         <h3>Complete smile makeovers</h3>
         <p>For bigger transformations, Dr. Emami sequences whitening, veneers, crowns, and orthodontics into one coordinated plan — assessed and delivered in a single office.</p>
       </Prose>
+      <SmileGallery treatment="cosmetic-dentistry" />
       <FaqBlock title="Cosmetic dentistry questions" faqs={FAQS} />
       <Cta title="Bring in the smile you have in mind" />
     </>

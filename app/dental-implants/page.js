@@ -1,5 +1,6 @@
 import { NAP, DOCTOR, OFFER } from "../../lib/practice";
 import { Schema, graph, breadcrumbs, faqSchema, serviceSchema, webPage } from "../../lib/schema";
+import SmileGallery from "../../components/SmileGallery";
 import { PageHero, Reviewed, FaqBlock, Cta, Prose, ReviewStrip } from "../../components/blocks";
 
 export const metadata = {
@@ -43,6 +44,7 @@ export default function Page() {
         <h2>One doctor, start to finish</h2>
         <p>In much of Los Angeles, an implant means three offices: a general dentist, an oral surgeon, and a restorative dentist. Here, {DOCTOR.name} performs the consultation, the placement, and the restoration herself, in the same office she has practiced in since {DOCTOR.established}. Continuity is quality control.</p>
       </Prose>
+      <SmileGallery treatment="dental-implants" />
       <FaqBlock title="Dental implant questions" faqs={FAQS} />
       <Cta title="Find out if an implant is right for you" body={`Bring your questions — the consultation and 3D imaging are part of the $2,000 complete price. Call ${NAP.phone}.`} />
     </>
