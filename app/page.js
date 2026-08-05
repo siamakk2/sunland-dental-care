@@ -27,13 +27,13 @@ export default function Home() {
       <section className="relative overflow-hidden border-b border-line">
         <div className="absolute inset-0">
           <img src="/images/hero-aligner.webp" alt="Dr. Mahvash Emami, DDS in the Sunland Dental Care office"
-               className="h-full w-full object-cover object-[68%_22%] opacity-[.9]" />
+               className="h-full w-full object-cover object-[78%_15%] opacity-[.95]" />
           <div className="absolute inset-0 bg-gradient-to-r from-cream/80 via-cream/35 to-transparent" />
         </div>
         <div className="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
-          <div className="max-w-2xl rounded-3xl bg-cream/85 p-6 shadow-xl ring-1 ring-line backdrop-blur-md md:p-10">
+          <div className="max-w-xl rounded-3xl bg-cream/75 p-6 shadow-xl ring-1 ring-line backdrop-blur-sm md:p-8">
           <p className="chip">Sunland-Tujunga's implant-focused dental practice · Est. {DOCTOR.established}</p>
-          <h1 className="mt-4 max-w-2xl text-4xl font-bold leading-tight md:text-6xl">
+          <h1 className="mt-4 text-4xl font-bold leading-tight md:text-5xl">
             Four decades of dentistry. One standard of care: minimally&nbsp;invasive.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-ink-soft">
@@ -45,16 +45,20 @@ export default function Home() {
             <a href={`tel:${NAP.phoneIntl}`} className="rounded-full bg-brand px-6 py-3 font-semibold text-white hover:bg-brand-dark">Call {NAP.phone}</a>
             <Link href="/dental-implants" className="rounded-full border border-ink/25 bg-cream/80 px-6 py-3 font-semibold hover:border-brand hover:text-brand">$2,000 Complete Implants →</Link>
           </div>
-          <dl className="mt-10 grid max-w-2xl grid-cols-2 gap-6 md:grid-cols-4">
-            {[[`${DOCTOR.yearsExperience} yrs`, "Clinical experience"], [String(DOCTOR.established), "Serving Sunland since"], ["1000s", "Implants placed"], ["$2,000", "Complete implant, fixed price"]].map(([v, l]) => (
-              <div key={l}>
-                <dt className="display text-3xl font-semibold text-brand">{v}</dt>
-                <dd className="mt-1 text-sm text-ink-soft">{l}</dd>
-              </div>
-            ))}
-          </dl>
           </div>
         </div>
+      </section>
+
+      {/* ── Stats band ── */}
+      <section className="border-b border-line bg-white">
+        <dl className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-8 md:grid-cols-4">
+          {[[`${DOCTOR.yearsExperience} yrs`, "Clinical experience"], [String(DOCTOR.established), "Serving Sunland since"], ["1000s", "Implants placed"], ["$2,000", "Complete implant, fixed price"]].map(([v, l]) => (
+            <div key={l} className="text-center md:text-left">
+              <dt className="display text-3xl font-bold text-brand">{v}</dt>
+              <dd className="mt-1 text-sm font-medium text-ink-soft">{l}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
 
       <ReviewStrip />
@@ -102,7 +106,7 @@ export default function Home() {
             </p>
             <Link href="/dr-emami" className="mt-6 inline-block rounded-full bg-brand px-5 py-2.5 font-bold text-white hover:bg-brand-dark">Meet Dr. Emami →</Link>
           </div>
-          <img src="/images/dr-emami-office.webp" alt="Dr. Emami standing beside the welcome table in her Sunland office"
+          <img src="/images/office-waiting.webp" alt="Treatment room at Sunland Dental Care"
                className="rounded-2xl border border-line object-cover shadow-sm" />
         </div>
       </section>
