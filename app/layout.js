@@ -5,7 +5,7 @@ import Link from "next/link";
 import { SITE, NAP, NAV, SERVICES, MORE_SERVICES, DOCTOR } from "../lib/practice";
 
 export const metadata = {
-  metadataBase: new URL("https://sunland-dental-care.vercel.app"), // TODO at DNS cutover: new URL(SITE.url)
+  metadataBase: new URL(SITE.url),
   title: {
     default: `${SITE.name} | ${DOCTOR.name} — Dental Implants & Cosmetic Dentistry in Sunland, CA`,
     template: `%s | ${SITE.name}`,
