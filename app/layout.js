@@ -79,6 +79,7 @@ function Footer() {
             <li><Link className="text-cream/85 hover:text-brand-bright" href="/about">About the Practice</Link></li>
             <li><Link className="text-cream/85 hover:text-brand-bright" href="/new-patients">New Patients</Link></li>
             <li><Link className="text-cream/85 hover:text-brand-bright" href="/faq">Patient FAQ</Link></li>
+            <li><Link className="text-cream/85 hover:text-brand-bright" href="/blog">Dental Health Blog</Link></li>
             <li><Link className="text-cream/85 hover:text-brand-bright" href="/contact">Contact & Location</Link></li>
           </ul>
         </div>
