@@ -3,17 +3,20 @@ import { NAP, DOCTOR, REVIEWS } from "../lib/practice";
 
 export function PageHero({ eyebrow, title, lead, image = "/images/dr-emami-hero.webp", pos = "center" }) {
   return (
-    <section className="relative overflow-hidden border-b border-line">
-      <div className="absolute inset-0">
-        <img src={image} alt="" aria-hidden="true"
-             className="h-full w-full object-cover opacity-[.85]" style={{ objectPosition: pos }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-cream/80 via-cream/40 to-transparent" />
-      </div>
-      <div className="relative mx-auto max-w-6xl px-4 py-16 md:py-24">
-        <div className="max-w-3xl rounded-3xl bg-cream/85 p-6 shadow-lg ring-1 ring-line backdrop-blur-md md:p-9">
+    <section className="border-b border-line bg-cream">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 md:grid-cols-[1.1fr_.9fr] md:py-16">
+        <div>
+          <span className="accent-bar" aria-hidden="true"></span>
           <p className="chip">{eyebrow}</p>
-          <h1 className="mt-4 text-4xl font-bold leading-tight md:text-5xl">{title}</h1>
-          {lead && <p className="mt-4 text-lg font-medium text-ink-soft">{lead}</p>}
+          <h1 className="mt-3 text-4xl font-bold leading-tight md:text-5xl">{title}</h1>
+          {lead && <p className="mt-5 max-w-xl text-lg text-ink-soft">{lead}</p>}
+        </div>
+        <div className="relative mx-auto w-60 md:w-72 lg:w-80">
+          <div className="arch absolute -right-4 -top-4 h-full w-full bg-brand/10" aria-hidden="true"></div>
+          <div className="absolute -left-7 top-10 h-24 w-24 rounded-full bg-brand" aria-hidden="true"></div>
+          <img src={image} alt="" aria-hidden="true"
+               className="arch relative w-full border border-line object-cover shadow-xl"
+               style={{ aspectRatio: "4/5", objectPosition: pos }} />
         </div>
       </div>
     </section>

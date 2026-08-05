@@ -23,28 +23,31 @@ export default function Home() {
     <>
       <Schema>{graph(faqSchema(HOME_FAQS), breadcrumbs([{ name: "Home", path: "/" }]))}</Schema>
 
-      {/* ── Hero: split layout — text left, Dr. Emami fully visible right ── */}
-      <section className="border-b border-line bg-gradient-to-br from-cream via-cream to-parchment">
-        <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 md:grid-cols-[1.05fr_.95fr] md:py-16">
+      {/* ── Hero: split, arch frame + red circle (logo motif) ── */}
+      <section className="border-b border-line bg-cream">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 md:grid-cols-[1.08fr_.92fr] md:py-20">
           <div>
+            <span className="accent-bar" aria-hidden="true"></span>
             <p className="chip">Sunland-Tujunga's implant-focused dental practice · Est. {DOCTOR.established}</p>
-            <h1 className="mt-5 text-4xl font-bold leading-tight md:text-6xl">
-              Four decades of dentistry. One standard of care: <span className="text-brand">minimally invasive.</span>
+            <h1 className="mt-5 text-4xl font-bold leading-[1.08] md:text-6xl">
+              Four decades of dentistry. One standard of care: <em className="text-brand">minimally invasive.</em>
             </h1>
-            <p className="mt-5 max-w-xl text-lg font-medium text-ink-soft">
+            <p className="mt-6 max-w-xl text-lg font-medium text-ink-soft">
               Sunland Dental Care is the practice of <Link href="/dr-emami" className="font-bold text-ink underline decoration-brand decoration-2 underline-offset-4 hover:text-brand">{DOCTOR.name}</Link> —
               an implantology specialist with {DOCTOR.yearsExperience} years of clinical experience and thousands of implants placed.
               Every treatment starts with the same principle: preserve what's healthy, fix only what isn't.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a href={`tel:${NAP.phoneIntl}`} className="rounded-full bg-brand px-7 py-3.5 text-lg font-bold text-white shadow-lg hover:bg-brand-dark">Call {NAP.phone}</a>
-              <Link href="/dental-implants" className="rounded-full border-2 border-ink/20 bg-white px-7 py-3.5 text-lg font-bold hover:border-brand hover:text-brand">$2,000 Complete Implants →</Link>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href={`tel:${NAP.phoneIntl}`} className="rounded-full bg-brand px-7 py-3.5 text-lg font-bold text-white shadow-lg shadow-brand/25 hover:bg-brand-dark">Call {NAP.phone}</a>
+              <Link href="/dental-implants" className="rounded-full border-2 border-ink px-7 py-3.5 text-lg font-bold hover:border-brand hover:text-brand">$2,000 Complete Implants →</Link>
             </div>
           </div>
-          <div className="relative mx-auto w-full max-w-md md:max-w-none">
-            <div className="absolute -inset-3 -z-10 rounded-[2rem] bg-brand/10" aria-hidden="true"></div>
+          <div className="relative mx-auto w-72 md:w-80 lg:w-96">
+            <div className="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-brand" aria-hidden="true"></div>
+            <div className="arch absolute -right-5 -bottom-5 h-full w-full border-2 border-brand/25" aria-hidden="true"></div>
             <img src="/images/hero-aligner.webp" alt="Dr. Mahvash Emami holding a clear aligner in her Sunland office"
-                 className="w-full rounded-[2rem] border-2 border-white object-cover shadow-2xl" style={{ aspectRatio: "10/11", objectPosition: "center 12%" }} />
+                 className="arch relative w-full border border-line object-cover shadow-2xl"
+                 style={{ aspectRatio: "5/6", objectPosition: "center 10%" }} />
           </div>
         </div>
       </section>
@@ -53,9 +56,9 @@ export default function Home() {
       <section className="border-b border-line bg-white">
         <dl className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-8 md:grid-cols-4">
           {[[`${DOCTOR.yearsExperience} yrs`, "Clinical experience"], [String(DOCTOR.established), "Serving Sunland since"], ["1000s", "Implants placed"], ["$2,000", "Complete implant, fixed price"]].map(([v, l]) => (
-            <div key={l} className="text-center md:text-left">
-              <dt className="display text-3xl font-bold text-brand">{v}</dt>
-              <dd className="mt-1 text-sm font-medium text-ink-soft">{l}</dd>
+            <div key={l} className="flex items-center gap-3">
+              <dt className="display flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-brand text-center text-lg font-bold leading-tight text-white">{v}</dt>
+              <dd className="text-sm font-semibold text-ink">{l}</dd>
             </div>
           ))}
         </dl>
@@ -89,7 +92,7 @@ export default function Home() {
       <section className="border-y border-line bg-ink text-cream">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-[1fr_.8fr]">
           <div>
-            <p className="chip">The philosophy</p>
+            <p className="eyebrow text-brand-bright">The philosophy</p>
             <blockquote className="display mt-4 text-2xl font-medium leading-snug md:text-3xl">
               "{DOCTOR.quote}"
             </blockquote>
@@ -113,12 +116,12 @@ export default function Home() {
 
       {/* ── Offer ── */}
       <section className="mx-auto max-w-6xl px-4 py-16">
-        <div className="rounded-3xl bg-ink px-6 py-12 text-cream md:px-12">
+        <div className="rounded-3xl bg-brand px-6 py-12 text-white md:px-12">
           <h2 className="max-w-2xl text-3xl font-semibold md:text-4xl">{OFFER.headline}</h2>
-          <p className="mt-4 max-w-2xl text-cream/80">
+          <p className="mt-4 max-w-2xl text-white/85">
             {OFFER.includes.join(", ").replace(/, ([^,]*)$/, ", and your $1").toLowerCase()} — {OFFER.note.toLowerCase()}
           </p>
-          <Link href="/dental-implants" className="mt-6 inline-block rounded-full bg-brand px-6 py-3 font-semibold text-white hover:bg-brand-dark">How it works →</Link>
+          <Link href="/dental-implants" className="mt-6 inline-block rounded-full bg-white px-6 py-3 font-bold text-brand hover:bg-cream">How it works →</Link>
         </div>
       </section>
 

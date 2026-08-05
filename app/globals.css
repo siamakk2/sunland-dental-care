@@ -5,11 +5,11 @@
   --color-brand-bright: #f04a5e;
   --color-gold: #e8a317;
   --color-brand-dark: #9c0c24;
-  --color-ink: #191009;
-  --color-ink-soft: #4f3d2c;
-  --color-cream: #fffcf6;
-  --color-parchment: #f7e8d3;
-  --color-line: #e6d3b6;
+  --color-ink: #17130f;
+  --color-ink-soft: #54504a;
+  --color-cream: #ffffff;
+  --color-parchment: #f5f5f4;
+  --color-line: #e5e3e0;
   --font-display: "Fraunces Variable", Georgia, serif;
   --font-body: "Inter Variable", system-ui, sans-serif;
 }
@@ -18,7 +18,8 @@ html { scroll-behavior: smooth; }
 body { background: var(--color-cream); color: var(--color-ink); font-family: var(--font-body); }
 h1,h2,h3,.display { font-family: var(--font-display); }
 .eyebrow { letter-spacing: .12em; text-transform: uppercase; font-size: .72rem; font-weight: 700; }
-.chip { display: inline-block; background: var(--color-brand); color: #fff; border-radius: 999px; padding: .35rem .85rem; letter-spacing: .1em; text-transform: uppercase; font-size: .7rem; font-weight: 700; }
+.chip { display: inline-block; color: var(--color-brand); letter-spacing: .12em; text-transform: uppercase; font-size: .72rem; font-weight: 800; }
+.arch { border-radius: 11rem 11rem 1.25rem 1.25rem; }
 .accent-bar { display: block; width: 3.5rem; height: .3rem; background: var(--color-brand); border-radius: 999px; margin-bottom: 1rem; }
 ::selection { background: #c8102e; color: #fff; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
