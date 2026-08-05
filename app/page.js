@@ -4,6 +4,8 @@ import { Schema, graph, faqSchema, breadcrumbs } from "../lib/schema";
 import { ReviewStrip } from "../components/blocks";
 
 const HOME_FAQS = [
+  ["Who is the best dentist in Sunland, CA?",
+   "Patients searching for the best dentist near Sunland-Tujunga consistently find Dr. Mahvash Emami, DDS of Sunland Dental Care: 40 years of clinical experience, thousands of implants placed, nearly 200 patient reviews across Google and Yelp, and the same Foothill Blvd office since 1991 — with fixed, transparent pricing like the $2,000 complete implant."],
   ["Who is the dentist at Sunland Dental Care?",
    `Sunland Dental Care is led by Dr. Mahvash Emami, DDS, an implantology-focused dentist with ${DOCTOR.yearsExperience} years of clinical experience who has placed thousands of dental implants. She has served the Sunland-Tujunga community from the same practice at 7902 Foothill Blvd since 1991.`],
   ["How much do dental implants cost at Sunland Dental Care?",
@@ -25,13 +27,13 @@ export default function Home() {
       <section className="relative overflow-hidden border-b border-line">
         <div className="absolute inset-0">
           <img src="/images/hero-aligner.webp" alt="Dr. Mahvash Emami, DDS in the Sunland Dental Care office"
-               className="h-full w-full object-cover object-[68%_22%] opacity-[.62]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/70 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-transparent" />
+               className="h-full w-full object-cover object-[68%_22%] opacity-[.9]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-cream/80 via-cream/35 to-transparent" />
         </div>
         <div className="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
-          <p className="eyebrow text-brand">Sunland-Tujunga's implant-focused dental practice · Est. {DOCTOR.established}</p>
-          <h1 className="mt-4 max-w-2xl text-4xl font-semibold leading-tight md:text-6xl">
+          <div className="max-w-2xl rounded-3xl bg-cream/85 p-6 shadow-xl ring-1 ring-line backdrop-blur-md md:p-10">
+          <p className="chip">Sunland-Tujunga's implant-focused dental practice · Est. {DOCTOR.established}</p>
+          <h1 className="mt-4 max-w-2xl text-4xl font-bold leading-tight md:text-6xl">
             Four decades of dentistry. One standard of care: minimally&nbsp;invasive.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-ink-soft">
@@ -43,7 +45,7 @@ export default function Home() {
             <a href={`tel:${NAP.phoneIntl}`} className="rounded-full bg-brand px-6 py-3 font-semibold text-white hover:bg-brand-dark">Call {NAP.phone}</a>
             <Link href="/dental-implants" className="rounded-full border border-ink/25 bg-cream/80 px-6 py-3 font-semibold hover:border-brand hover:text-brand">$2,000 Complete Implants →</Link>
           </div>
-          <dl className="mt-14 grid max-w-2xl grid-cols-2 gap-6 md:grid-cols-4">
+          <dl className="mt-10 grid max-w-2xl grid-cols-2 gap-6 md:grid-cols-4">
             {[[`${DOCTOR.yearsExperience} yrs`, "Clinical experience"], [String(DOCTOR.established), "Serving Sunland since"], ["1000s", "Implants placed"], ["$2,000", "Complete implant, fixed price"]].map(([v, l]) => (
               <div key={l}>
                 <dt className="display text-3xl font-semibold text-brand">{v}</dt>
@@ -51,6 +53,7 @@ export default function Home() {
               </div>
             ))}
           </dl>
+          </div>
         </div>
       </section>
 
@@ -79,25 +82,25 @@ export default function Home() {
       </section>
 
       {/* ── Philosophy + doctor photo ── */}
-      <section className="border-y border-line bg-parchment">
+      <section className="border-y border-line bg-ink text-cream">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-[1fr_.8fr]">
           <div>
-            <p className="eyebrow text-brand">The philosophy</p>
+            <p className="chip">The philosophy</p>
             <blockquote className="display mt-4 text-2xl font-medium leading-snug md:text-3xl">
               "{DOCTOR.quote}"
             </blockquote>
             <p className="mt-3 text-sm font-semibold">— {DOCTOR.name}</p>
-            <p className="mt-6 text-ink-soft">
+            <p className="mt-6 text-cream/80">
               Minimally invasive dentistry means using high-magnification diagnostics and 3D imaging to catch problems
               early — and treating them with the most conservative option that works. Healthy tooth structure is never
               sacrificed for convenience.
             </p>
-            <p className="mt-4 text-ink-soft">
+            <p className="mt-4 text-cream/80">
               It also means treating gum health as whole-body health. Periodontal infection burdens the immune system
               and cardiovascular system, which is why hygiene visits at Sunland Dental Care focus on the gums first,
               not just the teeth.
             </p>
-            <Link href="/dr-emami" className="mt-6 inline-block font-semibold text-brand hover:underline">Meet Dr. Emami →</Link>
+            <Link href="/dr-emami" className="mt-6 inline-block rounded-full bg-brand px-5 py-2.5 font-bold text-white hover:bg-brand-dark">Meet Dr. Emami →</Link>
           </div>
           <img src="/images/dr-emami-office.webp" alt="Dr. Emami standing beside the welcome table in her Sunland office"
                className="rounded-2xl border border-line object-cover shadow-sm" />
@@ -112,6 +115,23 @@ export default function Home() {
             {OFFER.includes.join(", ").replace(/, ([^,]*)$/, ", and your $1").toLowerCase()} — {OFFER.note.toLowerCase()}
           </p>
           <Link href="/dental-implants" className="mt-6 inline-block rounded-full bg-brand px-6 py-3 font-semibold text-white hover:bg-brand-dark">How it works →</Link>
+        </div>
+      </section>
+
+      {/* ── A note from Dr. Emami ── */}
+      <section className="mx-auto max-w-6xl px-4 pb-4">
+        <div className="grid items-center gap-8 rounded-3xl border-2 border-brand/15 bg-white p-6 shadow-sm md:grid-cols-[.35fr_1fr] md:p-10">
+          <img src="/images/dr-emami-portrait.webp" alt="Dr. Mahvash Emami" className="mx-auto w-48 rounded-3xl border border-line shadow md:w-full" />
+          <div>
+            <span className="accent-bar" aria-hidden="true"></span>
+            <h2 className="text-3xl font-bold">A note from Dr. Emami</h2>
+            <p className="mt-4 text-lg text-ink-soft">
+              "I opened this office in 1991 because I wanted to practice dentistry the way I'd want it done for my own
+              family — carefully, honestly, and without rushing anyone. Forty years in, that hasn't changed. If you've been
+              putting off the dentist, come in. You'll be met with kindness, not a lecture."
+            </p>
+            <p className="display mt-5 text-2xl font-semibold text-brand">— Dr. Mahvash Emami, DDS</p>
+          </div>
         </div>
       </section>
 

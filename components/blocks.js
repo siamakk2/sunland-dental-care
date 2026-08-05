@@ -6,14 +6,15 @@ export function PageHero({ eyebrow, title, lead, image = "/images/dr-emami-hero.
     <section className="relative overflow-hidden border-b border-line">
       <div className="absolute inset-0">
         <img src={image} alt="" aria-hidden="true"
-             className="h-full w-full object-cover opacity-[.55]" style={{ objectPosition: pos }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/70 to-cream/10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-transparent" />
+             className="h-full w-full object-cover opacity-[.85]" style={{ objectPosition: pos }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-cream/80 via-cream/40 to-transparent" />
       </div>
       <div className="relative mx-auto max-w-6xl px-4 py-16 md:py-24">
-        <p className="eyebrow text-brand">{eyebrow}</p>
-        <h1 className="mt-3 max-w-3xl text-4xl font-semibold md:text-5xl">{title}</h1>
-        {lead && <p className="mt-5 max-w-2xl text-lg text-ink-soft">{lead}</p>}
+        <div className="max-w-3xl rounded-3xl bg-cream/85 p-6 shadow-lg ring-1 ring-line backdrop-blur-md md:p-9">
+          <p className="chip">{eyebrow}</p>
+          <h1 className="mt-4 text-4xl font-bold leading-tight md:text-5xl">{title}</h1>
+          {lead && <p className="mt-4 text-lg font-medium text-ink-soft">{lead}</p>}
+        </div>
       </div>
     </section>
   );
@@ -59,10 +60,10 @@ export function Cta({ title = "Ready to talk about your smile?", body }) {
 
 export function ReviewStrip() {
   return (
-    <section className="border-y border-line bg-white/70">
+    <section className="border-y-2 border-brand/20 bg-white">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-6">
         <div>
-          <p className="font-semibold"><span aria-hidden="true" className="text-brand">★★★★★ </span>Trusted by Sunland-Tujunga for {new Date().getFullYear() - DOCTOR.established} years</p>
+          <p className="font-semibold"><span aria-hidden="true" className="text-gold">★★★★★ </span>Trusted by Sunland-Tujunga for {new Date().getFullYear() - DOCTOR.established} years</p>
           <p className="text-sm text-ink-soft">{REVIEWS.blurb} — patients describe care as honest, gentle, and thorough.</p>
         </div>
         <div className="flex gap-3 text-sm font-semibold">

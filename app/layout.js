@@ -31,7 +31,7 @@ function Header() {
             <Link key={n.href} href={n.href} className="hover:text-brand">{n.label}</Link>
           ))}
         </nav>
-        <a href={`tel:${NAP.phoneIntl}`} className="rounded-full bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand-dark">
+        <a href={`tel:${NAP.phoneIntl}`} className="rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-white shadow-md hover:bg-brand-dark">
           {NAP.phone}
         </a>
       </div>
@@ -46,44 +46,44 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="mt-20 border-t border-line bg-parchment pb-14 md:pb-0">
+    <footer className="mt-20 bg-ink pb-14 text-cream md:pb-0">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-3">
         <div>
           <img src="/images/logo.png" alt="Sunland Dental Care" className="h-14 w-auto" />
-          <p className="mt-3 text-sm text-ink-soft">
+          <p className="mt-3 text-sm text-cream/70">
             {DOCTOR.name} — implant-focused, minimally invasive dentistry serving
             Sunland-Tujunga and the Foothill communities since {DOCTOR.established}.
           </p>
           <p className="mt-4 text-sm">
-            <a className="underline hover:text-brand" href={NAP.mapsUrl}>{NAP.street}, {NAP.city}, {NAP.state} {NAP.zip}</a><br />
-            <a className="hover:text-brand" href={`tel:${NAP.phoneIntl}`}>{NAP.phone}</a><br />
+            <a className="underline hover:text-brand-bright" href={NAP.mapsUrl}>{NAP.street}, {NAP.city}, {NAP.state} {NAP.zip}</a><br />
+            <a className="font-bold text-brand-bright hover:underline" href={`tel:${NAP.phoneIntl}`}>{NAP.phone}</a><br />
             {NAP.hours} · Sat–Sun Closed<br />We welcome patients in English, Español, and فارسی
           </p>
         </div>
         <div>
-          <p className="eyebrow text-ink-soft">Services</p>
+          <p className="eyebrow text-brand-bright">Services</p>
           <ul className="mt-3 space-y-2 text-sm">
             {SERVICES.map((s) => (
-              <li key={s.slug}><Link className="hover:text-brand" href={`/${s.slug}`}>{s.name}</Link></li>
+              <li key={s.slug}><Link className="text-cream/85 hover:text-brand-bright" href={`/${s.slug}`}>{s.name}</Link></li>
             ))}
-            <li><Link className="hover:text-brand" href="/pricing">Pricing</Link></li>
+            <li><Link className="text-cream/85 hover:text-brand-bright" href="/pricing">Pricing</Link></li>
             {MORE_SERVICES.map((s) => (
-              <li key={s.slug}><Link className="hover:text-brand" href={`/${s.slug}`}>{s.name}</Link></li>
+              <li key={s.slug}><Link className="text-cream/85 hover:text-brand-bright" href={`/${s.slug}`}>{s.name}</Link></li>
             ))}
           </ul>
         </div>
         <div>
-          <p className="eyebrow text-ink-soft">Practice</p>
+          <p className="eyebrow text-brand-bright">Practice</p>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><Link className="hover:text-brand" href="/dr-emami">Meet Dr. Emami</Link></li>
-            <li><Link className="hover:text-brand" href="/about">About the Practice</Link></li>
-            <li><Link className="hover:text-brand" href="/new-patients">New Patients</Link></li>
-            <li><Link className="hover:text-brand" href="/faq">Patient FAQ</Link></li>
-            <li><Link className="hover:text-brand" href="/contact">Contact & Location</Link></li>
+            <li><Link className="text-cream/85 hover:text-brand-bright" href="/dr-emami">Meet Dr. Emami</Link></li>
+            <li><Link className="text-cream/85 hover:text-brand-bright" href="/about">About the Practice</Link></li>
+            <li><Link className="text-cream/85 hover:text-brand-bright" href="/new-patients">New Patients</Link></li>
+            <li><Link className="text-cream/85 hover:text-brand-bright" href="/faq">Patient FAQ</Link></li>
+            <li><Link className="text-cream/85 hover:text-brand-bright" href="/contact">Contact & Location</Link></li>
           </ul>
         </div>
       </div>
-      <p className="border-t border-line px-4 py-4 text-center text-xs text-ink-soft">
+      <p className="border-t border-cream/15 px-4 py-4 text-center text-xs text-cream/60">
         © {new Date().getFullYear()} {SITE.name}. {DOCTOR.name}. All rights reserved.
       </p>
     </footer>
@@ -98,7 +98,7 @@ export default function RootLayout({ children }) {
         <main className="pb-16 md:pb-0">{children}</main>
         <Footer />
         <nav aria-label="Quick actions" className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-3 border-t border-line bg-cream/95 backdrop-blur md:hidden">
-          <a href={`tel:${NAP.phoneIntl}`} className="flex items-center justify-center gap-1 py-3.5 text-sm font-bold text-brand">📞 Call</a>
+          <a href={`tel:${NAP.phoneIntl}`} className="flex items-center justify-center gap-1 bg-brand py-3.5 text-sm font-bold text-white">📞 Call</a>
           <a href={`sms:${NAP.phoneIntl}`} className="flex items-center justify-center gap-1 border-x border-line py-3.5 text-sm font-bold">💬 Text</a>
           <a href="/contact" className="flex items-center justify-center gap-1 py-3.5 text-sm font-bold">🗓️ Book</a>
         </nav>
