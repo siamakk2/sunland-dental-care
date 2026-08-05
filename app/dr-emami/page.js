@@ -35,7 +35,7 @@ export default function DrEmami() {
       {/* ── Profile hero ── */}
       <section className="relative overflow-hidden border-b border-line">
         <div className="absolute inset-0">
-          <img src="/images/dr-emami-magnolia.jpg" alt="" aria-hidden="true" className="h-full w-full object-cover object-[72%_18%] opacity-[.45]" />
+          <img src="/images/dr-emami-magnolia.webp" alt="" aria-hidden="true" className="h-full w-full object-cover object-[72%_18%] opacity-[.45]" />
           <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/75 to-cream/15" />
           <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-transparent" />
         </div>
@@ -131,8 +131,8 @@ export default function DrEmami() {
         </p>
         <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3">
           <img src="/images/office-waiting.jpg" alt="Waiting area at Sunland Dental Care" className="h-64 w-full rounded-2xl border border-line object-cover md:h-80" />
-          <img src="/images/office-operatory.jpg" alt="Treatment room with modern dental equipment at Sunland Dental Care" className="h-64 w-full rounded-2xl border border-line object-cover md:h-80" />
-          <img src="/images/office-reception.jpg" alt="Reception at Sunland Dental Care on Foothill Blvd" className="col-span-2 h-64 w-full rounded-2xl border border-line object-cover md:col-span-1 md:h-80" />
+          <img src="/images/office-operatory.webp" alt="Treatment room with modern dental equipment at Sunland Dental Care" className="h-64 w-full rounded-2xl border border-line object-cover md:h-80" />
+          <img src="/images/office-reception.webp" alt="Reception at Sunland Dental Care on Foothill Blvd" className="col-span-2 h-64 w-full rounded-2xl border border-line object-cover md:col-span-1 md:h-80" />
         </div>
       </section>
 
@@ -140,7 +140,7 @@ export default function DrEmami() {
       <section className="border-t border-line">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-[.6fr_1fr]">
           <video className="mx-auto w-full max-w-xs rounded-3xl border border-line shadow-md" controls playsInline preload="none"
-                 poster="/images/video-poster.jpg" src="/images/dr-emami-video.mp4" aria-label="Short video of Dr. Emami in the office" />
+                 poster="/images/video-poster.webp" src="/images/dr-emami-video.mp4" aria-label="Short video of Dr. Emami in the office" />
           <div>
             <p className="eyebrow text-brand">A moment with the doctor</p>
             <h2 className="mt-3 text-3xl font-semibold">Precision you can see</h2>

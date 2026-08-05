@@ -1,5 +1,5 @@
 import { DOCTOR } from "../../lib/practice";
-import { Schema, graph, breadcrumbs, faqSchema } from "../../lib/schema";
+import { Schema, graph, breadcrumbs, faqSchema, serviceSchema, webPage } from "../../lib/schema";
 import { PageHero, Reviewed, FaqBlock, Cta, Prose } from "../../components/blocks";
 
 export const metadata = {
@@ -22,9 +22,9 @@ const FAQS = [
 export default function Page() {
   return (
     <>
-      <Schema>{graph(faqSchema(FAQS), breadcrumbs([
+      <Schema>{graph(serviceSchema({ name: "Invisalign Clear Aligners", path: "/invisalign", description: "Invisalign clear aligner orthodontics in Sunland, CA." }), webPage({ path: "/invisalign", name: "Invisalign Clear Aligners" }), faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "Invisalign", path: "/invisalign" }]))}</Schema>
-      <PageHero image="/images/hero-aligner.jpg" pos="center 30%" eyebrow="Invisalign & orthodontics"
+      <PageHero image="/images/hero-aligner.webp" pos="center 30%" eyebrow="Invisalign & orthodontics"
         title="Straighter teeth, on your schedule"
         lead="Clear aligner therapy moves your teeth discreetly — no brackets, no wires, and no interruption to how you eat, speak, or look while it happens." />
       <Reviewed />
@@ -36,7 +36,7 @@ export default function Page() {
       </Prose>
       <section className="mx-auto max-w-6xl px-4 pb-8">
         <div className="grid items-center gap-8 md:grid-cols-2">
-          <img src="/images/aligner-closeup.jpg" alt="Dr. Emami holding a clear Invisalign aligner" className="rounded-3xl border border-line shadow-sm" />
+          <img src="/images/aligner-closeup.webp" alt="Dr. Emami holding a clear Invisalign aligner" className="rounded-3xl border border-line shadow-sm" />
           <div>
             <h2 className="text-3xl font-semibold">Nearly invisible, entirely custom</h2>
             <p className="mt-4 text-ink-soft">Each aligner is manufactured for your teeth from a digital scan — thin, clear, and precise. Most people won't notice you're wearing one; you'll notice your smile changing.</p>

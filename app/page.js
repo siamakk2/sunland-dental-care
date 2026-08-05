@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SITE, NAP, DOCTOR, OFFER, AREAS, SERVICES } from "../lib/practice";
 import { Schema, graph, faqSchema, breadcrumbs } from "../lib/schema";
+import { ReviewStrip } from "../components/blocks";
 
 const HOME_FAQS = [
   ["Who is the dentist at Sunland Dental Care?",
@@ -53,6 +54,8 @@ export default function Home() {
         </div>
       </section>
 
+      <ReviewStrip />
+
       {/* ── Services ── */}
       <section className="mx-auto max-w-6xl px-4 py-16">
         <h2 className="text-3xl font-semibold md:text-4xl">Complete care, one Foothill Boulevard office</h2>
@@ -91,7 +94,7 @@ export default function Home() {
             </p>
             <Link href="/dr-emami" className="mt-6 inline-block font-semibold text-brand hover:underline">Meet Dr. Emami →</Link>
           </div>
-          <img src="/images/dr-emami-office.jpg" alt="Dr. Emami standing beside the welcome table in her Sunland office"
+          <img src="/images/dr-emami-office.webp" alt="Dr. Emami standing beside the welcome table in her Sunland office"
                className="rounded-2xl border border-line object-cover shadow-sm" />
         </div>
       </section>

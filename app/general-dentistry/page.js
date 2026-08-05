@@ -1,5 +1,5 @@
 import { DOCTOR } from "../../lib/practice";
-import { Schema, graph, breadcrumbs, faqSchema } from "../../lib/schema";
+import { Schema, graph, breadcrumbs, faqSchema, serviceSchema, webPage } from "../../lib/schema";
 import { PageHero, Reviewed, FaqBlock, Cta, Prose } from "../../components/blocks";
 
 export const metadata = {
@@ -22,7 +22,7 @@ const FAQS = [
 export default function Page() {
   return (
     <>
-      <Schema>{graph(faqSchema(FAQS), breadcrumbs([
+      <Schema>{graph(serviceSchema({ name: "General & Family Dentistry", path: "/general-dentistry", description: "Cleanings, periodontal-focused hygiene, fillings, and conservative restorative dentistry in Sunland, CA." }), webPage({ path: "/general-dentistry", name: "General & Family Dentistry" }), faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "General Dentistry", path: "/general-dentistry" }]))}</Schema>
       <PageHero image="/images/hero-exam.jpg" pos="center 30%" eyebrow="General & family dentistry"
         title="The kind of dentistry that keeps you out of the chair"

@@ -1,5 +1,5 @@
 import { DOCTOR } from "../../lib/practice";
-import { Schema, graph, breadcrumbs, faqSchema } from "../../lib/schema";
+import { Schema, graph, breadcrumbs, faqSchema, serviceSchema, webPage } from "../../lib/schema";
 import { PageHero, Reviewed, FaqBlock, Cta, Prose } from "../../components/blocks";
 
 export const metadata = {
@@ -22,9 +22,9 @@ const FAQS = [
 export default function Page() {
   return (
     <>
-      <Schema>{graph(faqSchema(FAQS), breadcrumbs([
+      <Schema>{graph(serviceSchema({ name: "Cosmetic Dentistry", path: "/cosmetic-dentistry", description: "Veneers, crowns, professional whitening, and smile makeovers in Sunland, CA." }), webPage({ path: "/cosmetic-dentistry", name: "Cosmetic Dentistry" }), faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "Cosmetic Dentistry", path: "/cosmetic-dentistry" }]))}</Schema>
-      <PageHero image="/images/dr-emami-office.jpg" pos="center 22%" eyebrow="Cosmetic dentistry"
+      <PageHero image="/images/dr-emami-office.webp" pos="center 22%" eyebrow="Cosmetic dentistry"
         title="A naturally beautiful smile, designed for your face"
         lead="At Sunland Dental Care, we listen carefully to what you want to change, then design a plan around your individual goals. The result is a smile that looks like you — at your best." />
       <Reviewed />

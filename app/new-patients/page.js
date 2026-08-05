@@ -1,6 +1,6 @@
 import { NAP, DOCTOR } from "../../lib/practice";
 import { Schema, graph, breadcrumbs, faqSchema } from "../../lib/schema";
-import { PageHero, Cta, Prose } from "../../components/blocks";
+import { PageHero, Cta, Prose, ReviewStrip } from "../../components/blocks";
 
 export const metadata = {
   title: "New Patients — What to Expect at Sunland Dental Care",
@@ -21,8 +21,9 @@ export default function Page() {
   return (
     <>
       <Schema>{graph(faqSchema(FAQS), breadcrumbs([{ name: "Home", path: "/" }, { name: "New Patients", path: "/new-patients" }]))}</Schema>
-      <PageHero image="/images/office-operatory.jpg" pos="center 30%" eyebrow="New patients welcome" title="Your first visit, without surprises"
+      <PageHero image="/images/office-operatory.webp" pos="center 30%" eyebrow="New patients welcome" title="Your first visit, without surprises"
         lead="Dr. Emami personally reviews every new-patient consultation. Here's exactly what to expect." />
+      <ReviewStrip />
       <Prose>
         <h2>1. A real conversation</h2>
         <p>Your visit starts with what brought you in — pain, appearance, a long gap since your last cleaning, or a second opinion. Dr. Emami listens first.</p>
@@ -35,9 +36,9 @@ export default function Page() {
       </Prose>
       <section className="mx-auto max-w-6xl px-4 pb-4">
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-          <img src="/images/office-reception.jpg" alt="Reception at Sunland Dental Care" className="h-56 w-full rounded-2xl border border-line object-cover md:h-72" />
+          <img src="/images/office-reception.webp" alt="Reception at Sunland Dental Care" className="h-56 w-full rounded-2xl border border-line object-cover md:h-72" />
           <img src="/images/office-waiting.jpg" alt="Waiting area at Sunland Dental Care" className="h-56 w-full rounded-2xl border border-line object-cover md:h-72" />
-          <img src="/images/office-operatory.jpg" alt="Treatment room at Sunland Dental Care" className="col-span-2 h-56 w-full rounded-2xl border border-line object-cover md:col-span-1 md:h-72" />
+          <img src="/images/office-operatory.webp" alt="Treatment room at Sunland Dental Care" className="col-span-2 h-56 w-full rounded-2xl border border-line object-cover md:col-span-1 md:h-72" />
         </div>
       </section>
       <Cta title="Book your first visit" body={`Call ${NAP.phone} — the office is open ${NAP.hours}.`} />

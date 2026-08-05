@@ -46,7 +46,7 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="mt-20 border-t border-line bg-parchment">
+    <footer className="mt-20 border-t border-line bg-parchment pb-14 md:pb-0">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-3">
         <div>
           <img src="/images/logo.png" alt="Sunland Dental Care" className="h-14 w-auto" />
@@ -92,8 +92,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="min-h-screen antialiased">
         <Header />
-        <main>{children}</main>
+        <main className="pb-16 md:pb-0">{children}</main>
         <Footer />
+        <nav aria-label="Quick actions" className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-3 border-t border-line bg-cream/95 backdrop-blur md:hidden">
+          <a href={`tel:${NAP.phoneIntl}`} className="flex items-center justify-center gap-1 py-3.5 text-sm font-bold text-brand">📞 Call</a>
+          <a href={`sms:${NAP.phoneIntl}`} className="flex items-center justify-center gap-1 border-x border-line py-3.5 text-sm font-bold">💬 Text</a>
+          <a href="/contact" className="flex items-center justify-center gap-1 py-3.5 text-sm font-bold">🗓️ Book</a>
+        </nav>
       </body>
     </html>
   );

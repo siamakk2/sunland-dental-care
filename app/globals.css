@@ -17,3 +17,9 @@ body { background: var(--color-cream); color: var(--color-ink); font-family: var
 h1,h2,h3,.display { font-family: var(--font-display); }
 .eyebrow { letter-spacing: .14em; text-transform: uppercase; font-size: .72rem; font-weight: 600; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* Accessibility: visible focus rings everywhere */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid #c8102e; outline-offset: 2px; border-radius: 4px;
+}
+::placeholder { color: #6b5c50; opacity: 1; }

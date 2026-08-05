@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <>
       <Schema>{graph(breadcrumbs([{ name: "Home", path: "/" }, { name: "About", path: "/about" }]))}</Schema>
-      <PageHero image="/images/hero-hallway.jpg" pos="center 40%" eyebrow={`Est. ${DOCTOR.established} · Sunland-Tujunga`}
+      <PageHero image="/images/hero-hallway.webp" pos="center 40%" eyebrow={`Est. ${DOCTOR.established} · Sunland-Tujunga`}
         title="A neighborhood practice, three generations deep"
         lead="From our first patient in the '90s to the grandchildren of those patients today, our stability is your guarantee of consistent, high-quality care." />
       <Prose>
@@ -27,8 +27,8 @@ export default function Page() {
       <section className="mx-auto max-w-6xl px-4 pb-4">
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
           <img src="/images/office-waiting.jpg" alt="Waiting area at Sunland Dental Care" className="h-56 w-full rounded-2xl border border-line object-cover md:h-72" />
-          <img src="/images/office-operatory.jpg" alt="Treatment room at Sunland Dental Care" className="h-56 w-full rounded-2xl border border-line object-cover md:h-72" />
-          <img src="/images/dr-emami-office.jpg" alt="Dr. Emami in the Sunland Dental Care office" className="col-span-2 h-56 w-full rounded-2xl border border-line object-cover md:col-span-1 md:h-72" />
+          <img src="/images/office-operatory.webp" alt="Treatment room at Sunland Dental Care" className="h-56 w-full rounded-2xl border border-line object-cover md:h-72" />
+          <img src="/images/dr-emami-office.webp" alt="Dr. Emami in the Sunland Dental Care office" className="col-span-2 h-56 w-full rounded-2xl border border-line object-cover md:col-span-1 md:h-72" />
         </div>
       </section>
       <Cta title="Come see the office for yourself" />
