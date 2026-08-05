@@ -24,7 +24,7 @@ export default function Page() {
     <>
       <Schema>{graph(serviceSchema({ name: "Invisalign Clear Aligners", path: "/invisalign", description: "Invisalign clear aligner orthodontics in Sunland, CA." }), webPage({ path: "/invisalign", name: "Invisalign Clear Aligners" }), faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "Invisalign", path: "/invisalign" }]))}</Schema>
-      <PageHero image="/images/hero-aligner.webp" pos="center 30%" eyebrow="Invisalign & orthodontics"
+      <PageHero image="/images/dr-emami-hero.webp" pos="72% 20%" eyebrow="Invisalign & orthodontics"
         title="Straighter teeth, on your schedule"
         lead="Clear aligner therapy moves your teeth discreetly — no brackets, no wires, and no interruption to how you eat, speak, or look while it happens." />
       <Reviewed />

@@ -3,12 +3,12 @@ import { useState } from "react";
 import { NAP } from "../lib/practice";
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: "", phone: "", topic: "New patient appointment", message: "" });
+  const [form, setForm] = useState({ name: "", phone: "", topic: "New patient appointment", days: "Any weekday", time: "Any time", message: "" });
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
   const send = () => {
-    const subject = `Website inquiry — ${form.topic}${form.name ? ` — ${form.name}` : ""}`;
-    const body = `Name: ${form.name}\nPhone: ${form.phone}\nTopic: ${form.topic}\n\n${form.message}`;
+    const subject = `Appointment request${form.name ? ` — ${form.name}` : ""} — ${form.topic}`;
+    const body = `APPOINTMENT REQUEST\n\nName: ${form.name}\nPhone: ${form.phone}\nTopic: ${form.topic}\nPreferred days: ${form.days}\nPreferred time: ${form.time}\n\n${form.message}`;
     window.location.href = `mailto:${NAP.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
@@ -17,7 +17,7 @@ export default function ContactForm() {
       <p className="eyebrow text-brand">Send a message</p>
       <h2 className="mt-2 text-2xl font-semibold">Request an appointment</h2>
       <p className="mt-2 text-sm text-ink-soft">
-        Fill this in and press send — it opens an email to the office, ready to go.
+        Tell us when works for you and the front desk will call to confirm your appointment.
         Prefer to talk? <a className="font-semibold text-brand hover:underline" href={`tel:${NAP.phoneIntl}`}>Call {NAP.phone}</a>.
       </p>
       <div className="mt-6 grid gap-4 md:grid-cols-2">
@@ -41,6 +41,22 @@ export default function ContactForm() {
           ))}
         </select>
       </label>
+      <div className="mt-4 grid gap-4 md:grid-cols-2">
+        <label className="block text-sm font-semibold">
+          Preferred days
+          <select value={form.days} onChange={set("days")}
+            className="mt-1 w-full rounded-xl border border-line bg-cream px-4 py-3 font-normal outline-none focus:border-brand">
+            {["Any weekday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map((t) => <option key={t}>{t}</option>)}
+          </select>
+        </label>
+        <label className="block text-sm font-semibold">
+          Preferred time
+          <select value={form.time} onChange={set("time")}
+            className="mt-1 w-full rounded-xl border border-line bg-cream px-4 py-3 font-normal outline-none focus:border-brand">
+            {["Any time", "Morning (9–12)", "Midday (12–2)", "Afternoon (2–5)"].map((t) => <option key={t}>{t}</option>)}
+          </select>
+        </label>
+      </div>
       <label className="mt-4 block text-sm font-semibold">
         Message
         <textarea value={form.message} onChange={set("message")} rows={4}

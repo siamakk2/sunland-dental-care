@@ -24,8 +24,8 @@ export default function Home() {
       {/* ── Hero: Dr. Emami, softly screened into the cream field ── */}
       <section className="relative overflow-hidden border-b border-line">
         <div className="absolute inset-0">
-          <img src={DOCTOR.heroPhoto} alt="Dr. Mahvash Emami, DDS in the Sunland Dental Care office"
-               className="h-full w-full object-cover object-[72%_18%] opacity-[.62]" />
+          <img src="/images/hero-aligner.webp" alt="Dr. Mahvash Emami, DDS in the Sunland Dental Care office"
+               className="h-full w-full object-cover object-[68%_22%] opacity-[.62]" />
           <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/70 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-transparent" />
         </div>

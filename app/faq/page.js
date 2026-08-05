@@ -22,7 +22,7 @@ const FAQS = [
   ["Do you accept insurance?",
    "Call the office with your plan details and the front desk will verify coverage and give you exact out-of-pocket costs before treatment begins."],
   ["What languages does the office serve?",
-   "The practice serves the diverse Foothill and San Fernando Valley communities; call the office to ask about language accommodation for your visit."],
+   "The office welcomes patients in English, Spanish, and Farsi — reflecting the Foothill and San Fernando Valley communities it has served since 1991."],
   ["What makes this practice different from other Los Angeles dentists?",
    "Three things: continuity (same doctor, same address since 1991), completeness (implants planned, placed, and restored in-house), and conservatism (a documented habit of recommending less treatment, not more)."],
 ];

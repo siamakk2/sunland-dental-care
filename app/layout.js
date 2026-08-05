@@ -57,7 +57,7 @@ function Footer() {
           <p className="mt-4 text-sm">
             <a className="underline hover:text-brand" href={NAP.mapsUrl}>{NAP.street}, {NAP.city}, {NAP.state} {NAP.zip}</a><br />
             <a className="hover:text-brand" href={`tel:${NAP.phoneIntl}`}>{NAP.phone}</a><br />
-            {NAP.hours} · Sat–Sun Closed
+            {NAP.hours} · Sat–Sun Closed<br />We welcome patients in English, Español, and فارسی
           </p>
         </div>
         <div>
