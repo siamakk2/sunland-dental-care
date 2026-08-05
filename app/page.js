@@ -23,28 +23,28 @@ export default function Home() {
     <>
       <Schema>{graph(faqSchema(HOME_FAQS), breadcrumbs([{ name: "Home", path: "/" }]))}</Schema>
 
-      {/* ── Hero: Dr. Emami, softly screened into the cream field ── */}
-      <section className="relative overflow-hidden border-b border-line">
-        <div className="absolute inset-0">
-          <img src="/images/hero-aligner.webp" alt="Dr. Mahvash Emami, DDS in the Sunland Dental Care office"
-               className="h-full w-full object-cover object-[78%_15%] opacity-[.95]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-cream/80 via-cream/35 to-transparent" />
-        </div>
-        <div className="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
-          <div className="max-w-xl rounded-3xl bg-cream/75 p-6 shadow-xl ring-1 ring-line backdrop-blur-sm md:p-8">
-          <p className="chip">Sunland-Tujunga's implant-focused dental practice · Est. {DOCTOR.established}</p>
-          <h1 className="mt-4 text-4xl font-bold leading-tight md:text-5xl">
-            Four decades of dentistry. One standard of care: minimally&nbsp;invasive.
-          </h1>
-          <p className="mt-6 max-w-xl text-lg text-ink-soft">
-            Sunland Dental Care is the practice of <Link href="/dr-emami" className="font-semibold text-ink underline decoration-brand/40 underline-offset-4 hover:decoration-brand">{DOCTOR.name}</Link> —
-            an implantology specialist with {DOCTOR.yearsExperience} years of clinical experience and thousands of implants placed.
-            Every treatment starts with the same principle: preserve what's healthy, fix only what isn't.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href={`tel:${NAP.phoneIntl}`} className="rounded-full bg-brand px-6 py-3 font-semibold text-white hover:bg-brand-dark">Call {NAP.phone}</a>
-            <Link href="/dental-implants" className="rounded-full border border-ink/25 bg-cream/80 px-6 py-3 font-semibold hover:border-brand hover:text-brand">$2,000 Complete Implants →</Link>
+      {/* ── Hero: split layout — text left, Dr. Emami fully visible right ── */}
+      <section className="border-b border-line bg-gradient-to-br from-cream via-cream to-parchment">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 md:grid-cols-[1.05fr_.95fr] md:py-16">
+          <div>
+            <p className="chip">Sunland-Tujunga's implant-focused dental practice · Est. {DOCTOR.established}</p>
+            <h1 className="mt-5 text-4xl font-bold leading-tight md:text-6xl">
+              Four decades of dentistry. One standard of care: <span className="text-brand">minimally invasive.</span>
+            </h1>
+            <p className="mt-5 max-w-xl text-lg font-medium text-ink-soft">
+              Sunland Dental Care is the practice of <Link href="/dr-emami" className="font-bold text-ink underline decoration-brand decoration-2 underline-offset-4 hover:text-brand">{DOCTOR.name}</Link> —
+              an implantology specialist with {DOCTOR.yearsExperience} years of clinical experience and thousands of implants placed.
+              Every treatment starts with the same principle: preserve what's healthy, fix only what isn't.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <a href={`tel:${NAP.phoneIntl}`} className="rounded-full bg-brand px-7 py-3.5 text-lg font-bold text-white shadow-lg hover:bg-brand-dark">Call {NAP.phone}</a>
+              <Link href="/dental-implants" className="rounded-full border-2 border-ink/20 bg-white px-7 py-3.5 text-lg font-bold hover:border-brand hover:text-brand">$2,000 Complete Implants →</Link>
+            </div>
           </div>
+          <div className="relative mx-auto w-full max-w-md md:max-w-none">
+            <div className="absolute -inset-3 -z-10 rounded-[2rem] bg-brand/10" aria-hidden="true"></div>
+            <img src="/images/hero-aligner.webp" alt="Dr. Mahvash Emami holding a clear aligner in her Sunland office"
+                 className="w-full rounded-[2rem] border-2 border-white object-cover shadow-2xl" style={{ aspectRatio: "10/11", objectPosition: "center 12%" }} />
           </div>
         </div>
       </section>
