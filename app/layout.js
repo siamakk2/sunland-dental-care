@@ -2,7 +2,7 @@ import "@fontsource-variable/fraunces";
 import "@fontsource-variable/inter";
 import "./globals.css";
 import Link from "next/link";
-import { SITE, NAP, NAV, SERVICES, DOCTOR } from "../lib/practice";
+import { SITE, NAP, NAV, SERVICES, MORE_SERVICES, DOCTOR } from "../lib/practice";
 
 export const metadata = {
   metadataBase: new URL(SITE.url),
@@ -67,6 +67,9 @@ function Footer() {
               <li key={s.slug}><Link className="hover:text-brand" href={`/${s.slug}`}>{s.name}</Link></li>
             ))}
             <li><Link className="hover:text-brand" href="/pricing">Pricing</Link></li>
+            {MORE_SERVICES.map((s) => (
+              <li key={s.slug}><Link className="hover:text-brand" href={`/${s.slug}`}>{s.name}</Link></li>
+            ))}
           </ul>
         </div>
         <div>

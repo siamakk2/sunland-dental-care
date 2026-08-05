@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SITE, NAP, DOCTOR, OFFER, AREAS, SERVICES } from "../lib/practice";
+import { SITE, NAP, DOCTOR, OFFER, AREAS, SERVICES, MORE_SERVICES } from "../lib/practice";
 import { Schema, graph, faqSchema, breadcrumbs } from "../lib/schema";
 import { ReviewStrip } from "../components/blocks";
 
@@ -69,6 +69,11 @@ export default function Home() {
               <p className="mt-2 text-sm text-ink-soft">{s.blurb}</p>
               <p className="mt-3 text-sm font-semibold text-brand">Learn more →</p>
             </Link>
+          ))}
+        </div>
+        <div className="mt-6 flex flex-wrap gap-2 text-sm">
+          {MORE_SERVICES.map((s) => (
+            <Link key={s.slug} href={`/${s.slug}`} className="rounded-full border border-line bg-white/60 px-4 py-2 font-semibold hover:border-brand hover:text-brand">{s.name} →</Link>
           ))}
         </div>
       </section>
