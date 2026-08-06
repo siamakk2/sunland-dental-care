@@ -17,7 +17,7 @@ export const metadata = {
     images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Sunland Dental Care — Dr. Mahvash Emami, DDS" }],
   },
   twitter: { card: "summary_large_image", images: ["/og.jpg"] },
-  robots: { index: true, follow: true },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 } },
 };
 
 function Header() {

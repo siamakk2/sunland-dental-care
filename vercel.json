@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    { "source": "/dental-implant", "destination": "/dental-implants", "permanent": true },
+    { "source": "/dental-implants-sunland", "destination": "/dental-implants", "permanent": true },
+    { "source": "/implants", "destination": "/dental-implants", "permanent": true },
+    { "source": "/contact-us", "destination": "/contact", "permanent": true },
+    { "source": "/about-us", "destination": "/about", "permanent": true },
+    { "source": "/services", "destination": "/general-dentistry", "permanent": true },
+    { "source": "/cosmetic", "destination": "/cosmetic-dentistry", "permanent": true },
+    { "source": "/invisalign-sunland", "destination": "/invisalign", "permanent": true },
+    { "source": "/meet-the-doctor", "destination": "/dr-emami", "permanent": true },
+    { "source": "/our-team", "destination": "/dr-emami", "permanent": true },
+    { "source": "/appointment", "destination": "/contact", "permanent": true },
+    { "source": "/appointments", "destination": "/contact", "permanent": true },
+    { "source": "/new-patient", "destination": "/new-patients", "permanent": true },
+    { "source": "/emergency", "destination": "/emergency-dentist", "permanent": true },
+    { "source": "/index.html", "destination": "/", "permanent": true }
+  ]
+}
