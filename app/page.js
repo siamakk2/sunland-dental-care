@@ -69,7 +69,7 @@ export default function Home() {
 
       {/* ── Services ── */}
       <section className="mx-auto max-w-6xl px-4 py-16">
-        <h2 className="text-3xl font-semibold md:text-4xl">Complete care, one Foothill Boulevard office</h2>
+        <h2 className="text-3xl font-bold md:text-4xl">Complete care, one Foothill Boulevard office</h2>
         <p className="mt-3 max-w-2xl text-ink-soft">
           Consultation, 3D imaging, surgery, and restoration all happen in-house — no bouncing between specialists across Los Angeles.
         </p>
@@ -82,6 +82,7 @@ export default function Home() {
             </Link>
           ))}
         </div>
+        <p className="mt-4"><Link href="/services" className="font-bold text-brand underline">See all services →</Link></p>
         <div className="mt-6 flex flex-wrap gap-2 text-sm">
           {MORE_SERVICES.map((s) => (
             <Link key={s.slug} href={`/${s.slug}`} className="rounded-full border border-line bg-white/60 px-4 py-2 font-semibold hover:border-brand hover:text-brand">{s.name} →</Link>
