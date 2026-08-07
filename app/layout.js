@@ -93,9 +93,19 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <p className="border-t border-cream/15 px-4 py-4 text-center text-xs text-cream/60">
-        © {new Date().getFullYear()} {SITE.name}. {DOCTOR.name}. All rights reserved.
-      </p>
+      <div className="border-t border-cream/15 px-4 py-5 text-center text-xs text-cream/60">
+        <nav aria-label="Legal" className="mb-3 flex flex-wrap justify-center gap-x-4 gap-y-2">
+          <Link className="hover:text-brand-bright" href="/privacy-policy">Privacy Policy</Link>
+          <Link className="hover:text-brand-bright" href="/terms-of-use">Terms of Use</Link>
+          <Link className="hover:text-brand-bright" href="/hipaa-notice">Notice of Privacy Practices</Link>
+          <Link className="hover:text-brand-bright" href="/accessibility">Accessibility</Link>
+        </nav>
+        <p>© {new Date().getFullYear()} {SITE.name}. {DOCTOR.name}. All rights reserved.</p>
+        <p className="mx-auto mt-3 max-w-3xl text-cream/45">
+          The content on this website is for general educational purposes only and is not dental advice. Viewing this site
+          or contacting us does not create a dentist-patient relationship. Individual results vary. In an emergency, call 911.
+        </p>
+      </div>
     </footer>
   );
 }
