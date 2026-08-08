@@ -3,6 +3,7 @@ import { SITE, NAP, DOCTOR, OFFER, AREAS, SERVICES, MORE_SERVICES } from "../lib
 import { CITIES } from "../lib/cities";
 import { Schema, graph, faqSchema, breadcrumbs } from "../lib/schema";
 import { ReviewStrip } from "../components/blocks";
+import Testimonials from "../components/Testimonials";
 
 const HOME_FAQS = [
   ["Who is the best dentist in Sunland, CA?",
@@ -38,7 +39,10 @@ export default function Home() {
               an implantology specialist with {DOCTOR.yearsExperience} years of clinical experience and thousands of implants placed.
               Every treatment starts with the same principle: preserve what's healthy, fix only what isn't.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <p className="mt-6 text-base font-semibold text-ink">
+              Se habla español · <span lang="fa">فارسی صحبت می‌کنیم</span> · English
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3">
               <a href={`tel:${NAP.phoneIntl}`} className="rounded-full bg-brand px-7 py-3.5 text-lg font-bold text-white shadow-lg shadow-brand/25 hover:bg-brand-dark">Call {NAP.phone}</a>
               <Link href="/dental-implants" className="rounded-full border-2 border-ink px-7 py-3.5 text-lg font-bold hover:border-brand hover:text-brand">$2,000 Complete Implants →</Link>
             </div>
@@ -126,6 +130,8 @@ export default function Home() {
           <Link href="/dental-implants" className="mt-6 inline-block rounded-full bg-white px-6 py-3 font-bold text-brand hover:bg-cream">How it works →</Link>
         </div>
       </section>
+
+      <Testimonials />
 
       {/* ── A note from Dr. Emami ── */}
       <section className="mx-auto max-w-6xl px-4 pb-4">

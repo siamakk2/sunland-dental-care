@@ -22,6 +22,10 @@ export const metadata = {
 
 function Header() {
   return (
+    <>
+    <div className="bg-ink px-4 py-1.5 text-center text-xs font-semibold text-cream">
+      <span className="text-brand-bright">●</span> We welcome patients in <strong>English</strong> · <strong>Español</strong> · <strong lang="fa">فارسی</strong>
+    </div>
     <header className="sticky top-0 z-40 border-b border-line bg-cream/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <Link href="/" className="flex items-center">
@@ -42,6 +46,7 @@ function Header() {
         ))}
       </nav>
     </header>
+    </>
   );
 }
 
