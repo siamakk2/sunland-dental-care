@@ -24,7 +24,7 @@ export default function Page() {
     <>
       <Schema>{graph(serviceSchema({ name: "Teeth Whitening", path: "/teeth-whitening", description: "Dentist-supervised professional teeth whitening in Sunland, CA." }), webPage({ path: "/teeth-whitening", name: "Teeth Whitening" }), faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "Teeth Whitening", path: "/teeth-whitening" }]))}</Schema>
-      <PageHero image="/images/ph-smile-tight.jpg" pos="center 12%" eyebrow="Professional whitening"
+      <PageHero image="/images/ph-orchids.jpg" pos="center 20%" eyebrow="Professional whitening"
         title="The fastest honest upgrade a smile can get"
         lead="Years of coffee and time, lifted safely in a supervised treatment — whitening is the highest-impact, lowest-intervention change in dentistry, when it's done right." />
       <Reviewed />

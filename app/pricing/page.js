@@ -25,7 +25,7 @@ export default function Page() {
     <>
       <Schema>{graph(faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "Pricing", path: "/pricing" }]))}</Schema>
-      <PageHero image="/images/ph-implantmodel.jpg" pos="center" eyebrow="Transparent pricing"
+      <PageHero image="/images/ph-implants-sign.jpg" pos="center" eyebrow="Transparent pricing"
         title="You should know the price before you sit in the chair"
         lead="A life-changing smile should be accessible to our Sunland neighbors. Our flagship offer is simple, complete, and fixed." />
       <section className="mx-auto max-w-6xl px-4 py-12">

@@ -2,6 +2,7 @@ import "@fontsource-variable/fraunces";
 import "@fontsource-variable/inter";
 import "./globals.css";
 import Link from "next/link";
+import { Header, Footer, MobileBar } from "../components/Chrome";
 import { SITE, NAP, NAV, SERVICES, MORE_SERVICES, DOCTOR } from "../lib/practice";
 import { CITIES } from "../lib/cities";
 
@@ -20,101 +21,6 @@ export const metadata = {
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 } },
 };
 
-function Header() {
-  return (
-    <>
-    <div className="bg-ink px-4 py-1.5 text-center text-xs font-semibold text-cream">
-      <span className="text-brand-bright">●</span> We welcome patients in <strong>English</strong> · <strong>Español</strong> · <strong lang="fa">فارسی</strong>
-    </div>
-    <header className="sticky top-0 z-40 border-b border-line bg-cream/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-        <Link href="/" className="flex items-center">
-          <img src="/images/logo.png" alt="Sunland Dental Care" className="h-12 w-auto md:h-14" />
-        </Link>
-        <nav className="hidden items-center gap-5 text-sm md:flex">
-          {NAV.map((n) => (
-            <Link key={n.href} href={n.href} className="hover:text-brand">{n.label}</Link>
-          ))}
-        </nav>
-        <a href={`tel:${NAP.phoneIntl}`} className="rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-white shadow-md hover:bg-brand-dark">
-          {NAP.phone}
-        </a>
-      </div>
-      <nav className="flex gap-4 overflow-x-auto border-t border-line px-4 py-2 text-sm md:hidden">
-        {NAV.map((n) => (
-          <Link key={n.href} href={n.href} className="whitespace-nowrap text-ink-soft">{n.label}</Link>
-        ))}
-      </nav>
-    </header>
-    </>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="mt-20 bg-ink pb-14 text-cream md:pb-0">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-4">
-        <div>
-          <img src="/images/logo.png" alt="Sunland Dental Care" className="h-14 w-auto" />
-          <p className="mt-3 text-sm text-cream/70">
-            {DOCTOR.name} — implant-focused, minimally invasive dentistry serving
-            Sunland-Tujunga and the Foothill communities since {DOCTOR.established}.
-          </p>
-          <p className="mt-4 text-sm">
-            <a className="underline hover:text-brand-bright" href={NAP.mapsUrl}>{NAP.street}, {NAP.city}, {NAP.state} {NAP.zip}</a><br />
-            <a className="font-bold text-brand-bright hover:underline" href={`tel:${NAP.phoneIntl}`}>{NAP.phone}</a><br />
-            {NAP.hours} · Sat–Sun Closed<br />We welcome patients in English, Español, and فارسی
-          </p>
-        </div>
-        <div>
-          <p className="eyebrow text-brand-bright">Services</p>
-          <ul className="mt-3 space-y-2 text-sm">
-            {SERVICES.map((s) => (
-              <li key={s.slug}><Link className="text-cream/85 hover:text-brand-bright" href={`/${s.slug}`}>{s.name}</Link></li>
-            ))}
-            <li><Link className="text-cream/85 hover:text-brand-bright" href="/pricing">Pricing</Link></li>
-            {MORE_SERVICES.map((s) => (
-              <li key={s.slug}><Link className="text-cream/85 hover:text-brand-bright" href={`/${s.slug}`}>{s.name}</Link></li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <p className="eyebrow text-brand-bright">Areas served</p>
-          <ul className="mt-3 space-y-2 text-sm">
-            {CITIES.map((c) => (
-              <li key={c.slug}><Link className="text-cream/85 hover:text-brand-bright" href={`/${c.slug}`}>Dentist for {c.short}</Link></li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <p className="eyebrow text-brand-bright">Practice</p>
-          <ul className="mt-3 space-y-2 text-sm">
-            <li><Link className="text-cream/85 hover:text-brand-bright" href="/dr-emami">Meet Dr. Emami</Link></li>
-            <li><Link className="text-cream/85 hover:text-brand-bright" href="/about">About the Practice</Link></li>
-            <li><Link className="text-cream/85 hover:text-brand-bright" href="/new-patients">New Patients</Link></li>
-            <li><Link className="text-cream/85 hover:text-brand-bright" href="/faq">Patient FAQ</Link></li>
-            <li><Link className="text-cream/85 hover:text-brand-bright" href="/blog">Dental Health Blog</Link></li>
-            <li><Link className="text-cream/85 hover:text-brand-bright" href="/contact">Contact & Location</Link></li>
-          </ul>
-        </div>
-      </div>
-      <div className="border-t border-cream/15 px-4 py-5 text-center text-xs text-cream/60">
-        <nav aria-label="Legal" className="mb-3 flex flex-wrap justify-center gap-x-4 gap-y-2">
-          <Link className="hover:text-brand-bright" href="/privacy-policy">Privacy Policy</Link>
-          <Link className="hover:text-brand-bright" href="/terms-of-use">Terms of Use</Link>
-          <Link className="hover:text-brand-bright" href="/hipaa-notice">Notice of Privacy Practices</Link>
-          <Link className="hover:text-brand-bright" href="/accessibility">Accessibility</Link>
-        </nav>
-        <p>© {new Date().getFullYear()} {SITE.name}. {DOCTOR.name}. All rights reserved.</p>
-        <p className="mx-auto mt-3 max-w-3xl text-cream/45">
-          The content on this website is for general educational purposes only and is not dental advice. Viewing this site
-          or contacting us does not create a dentist-patient relationship. Individual results vary. In an emergency, call 911.
-        </p>
-      </div>
-    </footer>
-  );
-}
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -122,11 +28,7 @@ export default function RootLayout({ children }) {
         <Header />
         <main className="pb-16 md:pb-0">{children}</main>
         <Footer />
-        <nav aria-label="Quick actions" className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-3 border-t border-line bg-cream/95 backdrop-blur md:hidden">
-          <a href={`tel:${NAP.phoneIntl}`} className="flex items-center justify-center gap-1 bg-brand py-3.5 text-sm font-bold text-white">📞 Call</a>
-          <a href={`sms:${NAP.phoneIntl}`} className="flex items-center justify-center gap-1 border-x border-line py-3.5 text-sm font-bold">💬 Text</a>
-          <a href="/contact" className="flex items-center justify-center gap-1 py-3.5 text-sm font-bold">🗓️ Book</a>
-        </nav>
+        <MobileBar />
       </body>
     </html>
   );

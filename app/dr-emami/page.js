@@ -132,7 +132,7 @@ export default function DrEmami() {
         <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3">
           <img src="/images/office-waiting.jpg" alt="Waiting area at Sunland Dental Care" className="h-64 w-full rounded-2xl border border-line object-cover md:h-80" />
           <img src="/images/ph-consult.jpg" alt="Dr. Emami explaining a dental implant with a model and 3D imaging" className="h-64 w-full rounded-2xl border border-line object-cover md:h-80" />
-          <img src="/images/ph-hallway.jpg" alt="Inside the Sunland Dental Care office" className="col-span-2 h-64 w-full rounded-2xl border border-line object-cover md:col-span-1 md:h-80" />
+          <img src="/images/ph-clinic-wide.jpg" alt="Inside the Sunland Dental Care office" className="col-span-2 h-64 w-full rounded-2xl border border-line object-cover md:col-span-1 md:h-80" />
         </div>
       </section>
 

@@ -24,7 +24,7 @@ export default function Page() {
     <>
       <Schema>{graph(serviceSchema({ name: "Dentures", path: "/dentures", description: "Full, partial, and implant-supported dentures in Sunland, CA." }), webPage({ path: "/dentures", name: "Dentures" }), faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "Dentures", path: "/dentures" }]))}</Schema>
-      <PageHero image="/images/ph-consult-tight.jpg" pos="center 20%" eyebrow="Dentures & implant-supported dentures"
+      <PageHero image="/images/ph-patient-side.jpg" pos="center 25%" eyebrow="Dentures & implant-supported dentures"
         title="Teeth that fit your life — and actually fit"
         lead="A well-made denture should look natural, stay put, and let you eat what you like. Whether you need your first denture, a replacement, or the security of implant support, it starts with an honest evaluation." />
       <Reviewed />
