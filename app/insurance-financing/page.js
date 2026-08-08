@@ -24,7 +24,7 @@ export default function Page() {
     <>
       <Schema>{graph(webPage({ path: "/insurance-financing", name: "Insurance & Payment Options" }), faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "Insurance & Financing", path: "/insurance-financing" }]))}</Schema>
-      <PageHero image="/images/office-reception.webp" pos="center 40%" eyebrow="Insurance & payment options"
+      <PageHero image="/images/ill/insurance.svg" pos="center" eyebrow="Insurance & payment options"
         title="You'll know the number before you decide"
         lead="Dental care you can't budget for is care you'll postpone. Here, coverage is verified up front, quotes are exact and written, and the price you're told is the price you pay." />
       <Prose>

@@ -24,11 +24,14 @@ export default function Blog() {
       <section className="mx-auto max-w-6xl px-4 py-12">
         <div className="grid gap-5 md:grid-cols-2">
           {POSTS.map((p) => (
-            <Link key={p.slug} href={`/blog/${p.slug}`} className="group rounded-3xl border border-line bg-white p-7 shadow-sm transition hover:border-brand/50 hover:shadow-md">
+            <Link key={p.slug} href={`/blog/${p.slug}`} className="group overflow-hidden rounded-3xl border border-line bg-white shadow-sm transition hover:border-brand/50 hover:shadow-md">
+              {p.image && <img src={p.image} alt="" aria-hidden="true" className="h-44 w-full border-b border-line object-cover" />}
+              <div className="p-7">
               <p className="chip">{p.tag}</p>
               <h2 className="mt-2 text-2xl font-bold leading-snug group-hover:text-brand">{p.title}</h2>
               <p className="mt-3 text-ink-soft">{p.excerpt}</p>
               <p className="mt-4 text-sm font-bold text-brand">Read · {p.read} →</p>
+              </div>
             </Link>
           ))}
         </div>

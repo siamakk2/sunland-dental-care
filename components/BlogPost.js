@@ -12,7 +12,8 @@ export default function BlogPost({ meta, faqs, children }) {
         breadcrumbs([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }, { name: meta.title, path }]))}</Schema>
       <article>
         <header className="border-b border-line bg-parchment/60">
-          <div className="mx-auto max-w-3xl px-4 py-12 md:py-16">
+          <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 md:grid-cols-[1.15fr_.85fr] md:py-16">
+            <div>
             <span className="accent-bar" aria-hidden="true"></span>
             <p className="chip">{meta.tag}</p>
             <h1 className="mt-3 text-4xl font-bold leading-tight md:text-5xl">{meta.title}</h1>
@@ -20,6 +21,11 @@ export default function BlogPost({ meta, faqs, children }) {
               By <Link href="/dr-emami" className="text-brand hover:underline">{DOCTOR.name}</Link> · {meta.read} read ·
               Updated {new Date(meta.date + "T12:00:00").toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
             </p>
+            </div>
+            {meta.image && (
+              <img src={meta.image} alt="" aria-hidden="true"
+                   className="w-full rounded-3xl border border-line shadow-md" />
+            )}
           </div>
         </header>
         <div className="mx-auto max-w-3xl space-y-5 px-4 py-12 text-lg text-ink-soft [&_h2]:pt-4 [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:text-ink [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-ink [&_strong]:text-ink [&_a]:font-semibold [&_a]:text-brand [&_a]:underline [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-6">
