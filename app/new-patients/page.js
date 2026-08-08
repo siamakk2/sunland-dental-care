@@ -21,7 +21,7 @@ export default function Page() {
   return (
     <>
       <Schema>{graph(faqSchema(FAQS), breadcrumbs([{ name: "Home", path: "/" }, { name: "New Patients", path: "/new-patients" }]))}</Schema>
-      <PageHero image="/images/office-operatory.webp" pos="center 30%" eyebrow="New patients welcome" title="Your first visit, without surprises"
+      <PageHero image="/images/ph-reception.jpg" pos="center 15%" eyebrow="New patients welcome" title="Your first visit, without surprises"
         lead="Dr. Emami personally reviews every new-patient consultation. Here's exactly what to expect." />
       <ReviewStrip />
       <Prose>

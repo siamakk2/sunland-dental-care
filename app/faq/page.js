@@ -31,7 +31,7 @@ export default function Page() {
   return (
     <>
       <Schema>{graph(faqSchema(FAQS), breadcrumbs([{ name: "Home", path: "/" }, { name: "FAQ", path: "/faq" }]))}</Schema>
-      <PageHero image="/images/hero-treatment.jpg" pos="center 35%" eyebrow="Patient FAQ" title="Questions patients actually ask"
+      <PageHero image="/images/office-reception.webp" pos="center 40%" eyebrow="Patient FAQ" title="Questions patients actually ask"
         lead={`Can't find your answer? Call ${NAP.phone} or email ${NAP.email} — a real person at the Sunland office will help.`} />
       <section className="mx-auto max-w-4xl px-4 py-14">
         <dl className="space-y-8">

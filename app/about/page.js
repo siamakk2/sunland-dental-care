@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <>
       <Schema>{graph(breadcrumbs([{ name: "Home", path: "/" }, { name: "About", path: "/about" }]))}</Schema>
-      <PageHero image="/images/hero-hallway.webp" pos="center 40%" eyebrow={`Est. ${DOCTOR.established} · Sunland-Tujunga`}
+      <PageHero image="/images/ph-hallway.jpg" pos="center 35%" eyebrow={`Est. ${DOCTOR.established} · Sunland-Tujunga`}
         title="A neighborhood practice, three generations deep"
         lead="From our first patient in the '90s to the grandchildren of those patients today, our stability is your guarantee of consistent, high-quality care." />
       <Prose>

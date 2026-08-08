@@ -25,7 +25,7 @@ export default function Page() {
     <>
       <Schema>{graph(serviceSchema({ name: "Periodontal Treatment & Gum Surgery", path: "/periodontal-treatment", description: "In-house periodontal therapy, deep cleanings, and gum surgery in Sunland, CA." }), webPage({ path: "/periodontal-treatment", name: "Periodontal Treatment" }), faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "Gum Disease & Periodontal Surgery", path: "/periodontal-treatment" }]))}</Schema>
-      <PageHero image="/images/ill/gums.svg" pos="center" eyebrow="Periodontal care · Performed in-house"
+      <PageHero image="/images/ph-op-2.jpg" pos="center 40%" eyebrow="Periodontal care · Performed in-house"
         title={<>Gum treatment and surgery, <span className="text-brand">under one roof</span></>}
         lead="Deep cleanings, periodontal therapy, and gum surgery are performed here by Dr. Emami — the same doctor who places your implants. No referral to a specialist across town, no second consultation, no second set of fees." />
       <Reviewed />

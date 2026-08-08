@@ -24,7 +24,7 @@ export default function Page() {
     <>
       <Schema>{graph(serviceSchema({ name: "Emergency Dentistry", path: "/emergency-dentist", description: "Urgent dental care in Sunland, CA for toothache, broken teeth, knocked-out teeth, and dental swelling." }), webPage({ path: "/emergency-dentist", name: "Emergency Dentist" }), faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "Emergency Dentist", path: "/emergency-dentist" }]))}</Schema>
-      <PageHero image="/images/office-waiting.webp" pos="center 45%" eyebrow="Urgent dental care · Sunland-Tujunga"
+      <PageHero image="/images/ph-op-3.jpg" pos="center 35%" eyebrow="Urgent dental care · Sunland-Tujunga"
         title={<>In pain? <span className="text-brand">Call now.</span></>}
         lead="Severe toothache, broken tooth, swelling — don't wait it out. Call the office and the team will tell you exactly what to do next, and make room for urgent pain during office hours." />
       <section className="mx-auto max-w-6xl px-4 pt-8">

@@ -24,7 +24,7 @@ export default function Page() {
     <>
       <Schema>{graph(serviceSchema({ name: "Root Canal Treatment", path: "/root-canals", description: "Gentle root canal therapy to save natural teeth, in Sunland, CA." }), webPage({ path: "/root-canals", name: "Root Canals" }), faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "Root Canals", path: "/root-canals" }]))}</Schema>
-      <PageHero image="/images/ill/toothache.svg" pos="center" eyebrow="Root canal therapy"
+      <PageHero image="/images/office-operatory.webp" pos="center 30%" eyebrow="Root canal therapy"
         title="Save the tooth. End the pain."
         lead="A root canal isn't the ordeal of its reputation — it's the treatment that stops one. Done gently and precisely, it clears the infection and keeps your natural tooth for decades more." />
       <Reviewed />

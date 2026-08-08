@@ -24,7 +24,7 @@ export default function Page() {
     <>
       <Schema>{graph(serviceSchema({ name: "Full-Arch Dental Implants", path: "/full-arch-implants", description: "All-on-4 style full-arch fixed implant teeth, 3D-planned and placed in-house in Sunland, CA." }), webPage({ path: "/full-arch-implants", name: "Full-Arch Implants" }), faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "Full-Arch Implants", path: "/full-arch-implants" }]))}</Schema>
-      <PageHero image="/images/allon4-hero.svg" pos="center 55%" eyebrow="Full-arch implantology"
+      <PageHero image="/images/ph-implantmodel.jpg" pos="center" eyebrow="Full-arch implantology"
         title="A complete new smile, anchored for good"
         lead="When many teeth are failing, replacing them one by one stops making sense. Full-arch implant treatment restores an entire jaw of fixed, non-removable teeth — planned in 3D and delivered by one doctor." />
       <Reviewed />

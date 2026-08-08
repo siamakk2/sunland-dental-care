@@ -6,4 +6,4 @@ export const metadata = {
   description: `${data.lead} Dr. Mahvash Emami, DDS — 7902 Foothill Blvd, Sunland, CA. Call (818) 353-5520.`,
   alternates: { canonical: `/${data.slug}` },
 };
-export default function Page() { return <CityPage data={data} image="/images/hero-hallway.webp" pos="center 40%" />; }
+export default function Page() { return <CityPage data={data} image="/images/ph-op-3.jpg" pos="center 30%" />; }

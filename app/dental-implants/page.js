@@ -27,7 +27,7 @@ export default function Page() {
     <>
       <Schema>{graph(serviceSchema({ name: "Dental Implants", path: "/dental-implants", description: "Complete single dental implant — consultation, 3D imaging, guided surgery, and crown — for $2,000 fixed at Sunland Dental Care in Sunland, CA.", price: "2000" }), webPage({ path: "/dental-implants", name: "Dental Implants" }), faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "Dental Implants", path: "/dental-implants" }]))}</Schema>
-      <PageHero image="/images/hero-consultdesk.webp" pos="center 25%" eyebrow="Implantology · 3D-guided surgery"
+      <PageHero image="/images/ph-consult.jpg" pos="center 22%" eyebrow="Implantology · 3D-guided surgery"
         title={<>A complete dental implant for <span className="text-brand">$2,000</span>. Truly complete.</>}
         lead="In the world of implantology, there is no substitute for experience. Dr. Emami has spent four decades and thousands of implants perfecting a process that is precise, minimally invasive, and honestly priced." />
       <Reviewed />

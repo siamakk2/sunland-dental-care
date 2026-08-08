@@ -37,7 +37,7 @@ export default function Page() {
   return (
     <>
       <Schema>{graph(webPage({ path: "/services", name: "All Dental Services" }), breadcrumbs([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }]))}</Schema>
-      <PageHero image="/images/ill/services.svg" pos="center" eyebrow="Everything we do"
+      <PageHero image="/images/ph-portrait.jpg" pos="center 18%" eyebrow="Everything we do"
         title={<>One office. <span className="text-brand">One doctor.</span> Every stage of care.</>}
         lead={`From a routine cleaning to a full arch of implants — including gum surgery and sedation for implant placement — every service below is performed here by ${DOCTOR.name}. Nothing gets referred across town.`} />
       <Reviewed />

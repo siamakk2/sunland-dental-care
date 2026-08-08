@@ -25,7 +25,7 @@ export default function Page() {
     <>
       <Schema>{graph(serviceSchema({ name: "Sedation for Implant Placement", path: "/sedation-implant-dentistry", description: "Sedation offered for dental implant placement at Sunland Dental Care, Sunland, CA." }), webPage({ path: "/sedation-implant-dentistry", name: "Sedation for Implant Placement" }), faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "Sedation for Implants", path: "/sedation-implant-dentistry" }]))}</Schema>
-      <PageHero image="/images/ill/sedation.svg" pos="center" eyebrow="Sedation · For implant placement"
+      <PageHero image="/images/ph-op-3.jpg" pos="center 40%" eyebrow="Sedation · For implant placement"
         title={<>Sleep through the part <span className="text-brand">you're dreading</span></>}
         lead="For patients whose anxiety has stood between them and fixing their smile, sedation is available specifically for implant placement — so the surgery becomes something you barely remember rather than something you postpone for years." />
       <Reviewed />

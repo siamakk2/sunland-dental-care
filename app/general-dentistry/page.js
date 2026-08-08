@@ -24,7 +24,7 @@ export default function Page() {
     <>
       <Schema>{graph(serviceSchema({ name: "General & Family Dentistry", path: "/general-dentistry", description: "Cleanings, periodontal-focused hygiene, fillings, and conservative restorative dentistry in Sunland, CA." }), webPage({ path: "/general-dentistry", name: "General & Family Dentistry" }), faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "General Dentistry", path: "/general-dentistry" }]))}</Schema>
-      <PageHero image="/images/hero-exam.jpg" pos="center 30%" eyebrow="General & family dentistry"
+      <PageHero image="/images/ph-op-1.jpg" pos="center 40%" eyebrow="General & family dentistry"
         title="The kind of dentistry that keeps you out of the chair"
         lead="Prevention, early diagnosis, and conservative treatment — for every member of the family, from first visits to grandparents who've been coming since 1991." />
       <Reviewed />

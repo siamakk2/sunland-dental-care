@@ -35,12 +35,12 @@ export default function DrEmami() {
       {/* ── Profile hero ── */}
       <section className="relative overflow-hidden border-b border-line">
         <div className="absolute inset-0">
-          <img src="/images/dr-emami-magnolia.webp" alt="" aria-hidden="true" className="h-full w-full object-cover object-[72%_18%] opacity-[.45]" />
+          <img src="/images/ph-portrait.jpg" alt="" aria-hidden="true" className="h-full w-full object-cover object-[72%_18%] opacity-[.45]" />
           <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/75 to-cream/15" />
           <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-transparent" />
         </div>
         <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-[.72fr_1fr] md:py-20">
-          <img src={DOCTOR.photo} alt={`${DOCTOR.name}, implantology specialist at Sunland Dental Care in Sunland, CA`}
+          <img src="/images/ph-reception.jpg" alt={`${DOCTOR.name}, implantology specialist at Sunland Dental Care in Sunland, CA`}
                className="mx-auto w-full max-w-sm rounded-3xl border border-line shadow-md" />
           <div>
             <p className="eyebrow text-brand">Founder · Sunland Dental Care · Est. {DOCTOR.established}</p>
@@ -131,8 +131,8 @@ export default function DrEmami() {
         </p>
         <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3">
           <img src="/images/office-waiting.jpg" alt="Waiting area at Sunland Dental Care" className="h-64 w-full rounded-2xl border border-line object-cover md:h-80" />
-          <img src="/images/office-operatory.webp" alt="Treatment room with modern dental equipment at Sunland Dental Care" className="h-64 w-full rounded-2xl border border-line object-cover md:h-80" />
-          <img src="/images/office-reception.webp" alt="Reception at Sunland Dental Care on Foothill Blvd" className="col-span-2 h-64 w-full rounded-2xl border border-line object-cover md:col-span-1 md:h-80" />
+          <img src="/images/ph-consult.jpg" alt="Dr. Emami explaining a dental implant with a model and 3D imaging" className="h-64 w-full rounded-2xl border border-line object-cover md:h-80" />
+          <img src="/images/ph-hallway.jpg" alt="Inside the Sunland Dental Care office" className="col-span-2 h-64 w-full rounded-2xl border border-line object-cover md:col-span-1 md:h-80" />
         </div>
       </section>
 

@@ -50,9 +50,9 @@ export default function Home() {
           <div className="relative mx-auto w-72 md:w-80 lg:w-96">
             <div className="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-brand" aria-hidden="true"></div>
             <div className="arch absolute -right-5 -bottom-5 h-full w-full border-2 border-brand/25" aria-hidden="true"></div>
-            <img src="/images/hero-aligner.webp" alt="Dr. Mahvash Emami holding a clear aligner in her Sunland office"
+            <img src="/images/ph-reception.jpg" alt="Dr. Mahvash Emami, DDS at Sunland Dental Care"
                  className="arch relative w-full border border-line object-cover shadow-2xl"
-                 style={{ aspectRatio: "5/6", objectPosition: "center 10%" }} />
+                 style={{ aspectRatio: "5/6", objectPosition: "center 12%" }} />
           </div>
         </div>
       </section>
@@ -115,7 +115,7 @@ export default function Home() {
             </p>
             <Link href="/dr-emami" className="mt-6 inline-block rounded-full bg-brand px-5 py-2.5 font-bold text-white hover:bg-brand-dark">Meet Dr. Emami →</Link>
           </div>
-          <img src="/images/office-waiting.webp" alt="Treatment room at Sunland Dental Care"
+          <img src="/images/ph-op-2.jpg" alt="Dr. Emami treating a patient at Sunland Dental Care"
                className="rounded-2xl border border-line object-cover shadow-sm" />
         </div>
       </section>
@@ -136,7 +136,7 @@ export default function Home() {
       {/* ── A note from Dr. Emami ── */}
       <section className="mx-auto max-w-6xl px-4 pb-4">
         <div className="grid items-center gap-8 rounded-3xl border-2 border-brand/15 bg-white p-6 shadow-sm md:grid-cols-[.35fr_1fr] md:p-10">
-          <img src="/images/dr-emami-portrait.webp" alt="Dr. Mahvash Emami" className="mx-auto w-48 rounded-3xl border border-line shadow md:w-full" />
+          <img src="/images/ph-headshot.jpg" alt="Dr. Mahvash Emami, DDS" className="mx-auto w-48 rounded-3xl border border-line shadow md:w-full" />
           <div>
             <span className="accent-bar" aria-hidden="true"></span>
             <h2 className="text-3xl font-bold">A note from Dr. Emami</h2>

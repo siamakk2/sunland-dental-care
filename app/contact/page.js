@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <>
       <Schema>{graph(breadcrumbs([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]))}</Schema>
-      <PageHero image="/images/hero-chair.webp" pos="center 45%" eyebrow="Contact & location" title="On Foothill Boulevard since 1991"
+      <PageHero image="/images/ph-op-2.jpg" pos="center 45%" eyebrow="Contact & location" title="On Foothill Boulevard since 1991"
         lead="Call, email, or come by — the office is easy to find in the heart of Sunland-Tujunga." />
       <section className="mx-auto grid max-w-6xl gap-6 px-4 py-14 md:grid-cols-3">
         <div className="rounded-2xl border border-line bg-white/60 p-6">
