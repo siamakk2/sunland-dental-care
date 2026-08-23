@@ -8,11 +8,11 @@ const T = {
   en: {
     langBar: <>We welcome patients in <strong>English</strong> · <strong>Español</strong> · <strong lang="fa">فارسی</strong></>,
     switch: "Español", switchHref: "/es", switchLabel: "Ver el sitio en español",
-    nav: [["/services","Services"],["/dental-implants","Dental Implants"],["/invisalign","Invisalign"],["/pricing","Pricing"],["/dr-emami","Dr. Emami"],["/faq","FAQ"],["/blog","Blog"],["/contact","Contact"]],
+    nav: [["/services","Services"],["/dental-implants","Dental Implants"],["/invisalign","Invisalign"],["/pricing","Pricing"],["/dr-emami","Dr. Emami"],["/ask-dr-emami","Ask Dr. Emami"],["/faq","FAQ"],["/blog","Blog"],["/contact","Contact"]],
     services: "Services", areas: "Areas served", practice: "Practice",
     tagline: <>{DOCTOR.name} — implant-focused, minimally invasive dentistry serving Sunland-Tujunga and the Foothill communities since {DOCTOR.established}.</>,
     hours: "Mon–Fri 9:00 AM – 5:00 PM · Sat–Sun Closed",
-    practiceLinks: [["/dr-emami","Meet Dr. Emami"],["/about","About the Practice"],["/new-patients","New Patients"],["/faq","Patient FAQ"],["/blog","Dental Health Blog"],["/contact","Contact & Location"]],
+    practiceLinks: [["/dr-emami","Meet Dr. Emami"],["/ask-dr-emami","Ask Dr. Emami"],["/about","About the Practice"],["/new-patients","New Patients"],["/faq","Patient FAQ"],["/blog","Dental Health Blog"],["/contact","Contact & Location"]],
     legal: [["/privacy-policy","Privacy Policy"],["/terms-of-use","Terms of Use"],["/hipaa-notice","Notice of Privacy Practices"],["/accessibility","Accessibility"]],
     disclaimer: "The content on this website is for general educational purposes only and is not dental advice. Viewing this site or contacting us does not create a dentist-patient relationship. Individual results vary. In an emergency, call 911.",
     call: "Call", text: "Text", book: "Book",
