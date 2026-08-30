@@ -2,6 +2,7 @@ import "@fontsource-variable/fraunces";
 import "@fontsource-variable/inter";
 import "./globals.css";
 import Link from "next/link";
+import Script from "next/script";
 import { Header, Footer, MobileBar } from "../components/Chrome";
 import { SITE, NAP, NAV, SERVICES, MORE_SERVICES, DOCTOR } from "../lib/practice";
 import { CITIES } from "../lib/cities";
@@ -25,8 +26,29 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XNGTJRKYRW"></script>
-        <script
+        {/* Ordering here is load-bearing. React hoists <script async src> to the
+            top of <head>, so a plain inline block placed above it still ends up
+            running after GA. next/script makes the order explicit: the consent
+            defaults are beforeInteractive, GA is afterInteractive. Without this,
+            GA initialises with no consent state and the first pageview is sent
+            with full storage before the visitor has chosen anything. */}
+        <Script
+          id="consent-default"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+(function(){var d='denied',g='granted',B={ad_storage:d,ad_user_data:d,ad_personalization:d,functionality_storage:d,personalization_storage:d,security_storage:g,wait_for_update:500},m=function(o){var r={},k;for(k in B)r[k]=B[k];for(k in o)r[k]=o[k];return r};
+gtag('consent','default',m({analytics_storage:g}));
+gtag('consent','default',m({analytics_storage:d,region:'AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE IS LI NO GB CH'.split(' ')}));
+try{var c=JSON.parse(localStorage.getItem('sk_consent_v1'));if(c&&c.v===1&&Date.now()-c.ts<15552e6){var a=c.ads?g:d,n=c.analytics?g:d,f=c.functional?g:d;gtag('consent','update',{ad_storage:a,ad_user_data:a,ad_personalization:a,analytics_storage:n,functionality_storage:f,personalization_storage:f,security_storage:g});}}catch(e){}})();` }}
+        />
+        <Script
+          id="ga-loader"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-XNGTJRKYRW"
+        />
+        <Script
+          id="ga-init"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -40,6 +62,7 @@ gtag('config', 'G-XNGTJRKYRW');`,
         <main className="pb-16 md:pb-0">{children}</main>
         <Footer />
         <MobileBar />
+        <Script id="consent-ui" strategy="afterInteractive" src="/consent.js" />
       </body>
     </html>
   );
