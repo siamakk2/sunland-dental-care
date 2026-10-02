@@ -2,7 +2,7 @@ import Link from "next/link";
 import BlogPost from "../../../components/BlogPost";
 import { POSTS } from "../../../lib/posts";
 const meta = POSTS.find((p) => p.slug === "affordable-dentist-no-insurance-san-fernando-valley");
-export const metadata = { title: meta.title, description: meta.description, alternates: { canonical: `/blog/${meta.slug}` } };
+export const metadata = { title: { absolute: meta.title }, description: meta.description, alternates: { canonical: `/blog/${meta.slug}` } };
 
 const FAQS = [
   ["How can I afford dental work without insurance?",

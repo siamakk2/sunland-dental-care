@@ -1,8 +1,8 @@
 import Link from "next/link";
 import BlogPost from "../../../components/BlogPost";
 import { POSTS } from "../../../lib/posts";
-const meta = POSTS[3];
-export const metadata = { title: meta.title, description: meta.description, alternates: { canonical: `/blog/${meta.slug}` } };
+const meta = POSTS.find((p) => p.slug === "implants-vs-dentures-vs-bridges");
+export const metadata = { title: { absolute: meta.title }, description: meta.description, alternates: { canonical: `/blog/${meta.slug}` } };
 
 const FAQS = [
   ["Which option is cheapest over 20 years?",

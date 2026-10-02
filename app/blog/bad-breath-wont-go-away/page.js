@@ -2,7 +2,7 @@ import Link from "next/link";
 import BlogPost from "../../../components/BlogPost";
 import { POSTS } from "../../../lib/posts";
 const meta = POSTS.find((p) => p.slug === "bad-breath-wont-go-away");
-export const metadata = { title: meta.title, description: meta.description, alternates: { canonical: `/blog/${meta.slug}` } };
+export const metadata = { title: { absolute: meta.title }, description: meta.description, alternates: { canonical: `/blog/${meta.slug}` } };
 
 const FAQS = [
   ["Why does my breath smell bad even though I brush twice a day?",

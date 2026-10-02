@@ -1,8 +1,8 @@
 import Link from "next/link";
 import BlogPost from "../../../components/BlogPost";
 import { POSTS } from "../../../lib/posts";
-const meta = POSTS[2];
-export const metadata = { title: meta.title, description: meta.description, alternates: { canonical: `/blog/${meta.slug}` } };
+const meta = POSTS.find((p) => p.slug === "how-long-do-dental-implants-last");
+export const metadata = { title: { absolute: meta.title }, description: meta.description, alternates: { canonical: `/blog/${meta.slug}` } };
 
 const FAQS = [
   ["Can a dental implant get a cavity?",

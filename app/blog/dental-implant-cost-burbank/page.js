@@ -2,7 +2,7 @@ import Link from "next/link";
 import BlogPost from "../../../components/BlogPost";
 import { POSTS } from "../../../lib/posts";
 const meta = POSTS.find((p) => p.slug === "dental-implant-cost-burbank");
-export const metadata = { title: meta.title, description: meta.description, alternates: { canonical: `/blog/${meta.slug}` } };
+export const metadata = { title: { absolute: meta.title }, description: meta.description, alternates: { canonical: `/blog/${meta.slug}` } };
 
 const FAQS = [
   ["How much is a single dental implant in Burbank?",

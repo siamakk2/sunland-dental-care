@@ -2,7 +2,7 @@ import Link from "next/link";
 import BlogPost from "../../../components/BlogPost";
 import { POSTS } from "../../../lib/posts";
 const meta = POSTS.find((p) => p.slug === "emergency-dentist-tujunga");
-export const metadata = { title: meta.title, description: meta.description, alternates: { canonical: `/blog/${meta.slug}` } };
+export const metadata = { title: { absolute: meta.title }, description: meta.description, alternates: { canonical: `/blog/${meta.slug}` } };
 
 const FAQS = [
   ["Where can I find an emergency dentist near Tujunga?",

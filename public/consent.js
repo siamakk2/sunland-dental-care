@@ -1,5 +1,5 @@
 /* ============================================================================
-   consent.js — cookie & tracking consent for Siamak Kalhor Consulting
+   consent.js — cookie & tracking consent for Sunland Dental Care
    Portable: drop into any site, edit CONFIG, load with <script defer src>.
 
    Requires the head snippet (consent-head-snippet.html) to run BEFORE

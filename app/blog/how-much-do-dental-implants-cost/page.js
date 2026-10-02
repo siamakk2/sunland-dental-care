@@ -1,8 +1,8 @@
 import Link from "next/link";
 import BlogPost from "../../../components/BlogPost";
 import { POSTS } from "../../../lib/posts";
-const meta = POSTS[0];
-export const metadata = { title: meta.title, description: meta.description, alternates: { canonical: `/blog/${meta.slug}` } };
+const meta = POSTS.find((p) => p.slug === "how-much-do-dental-implants-cost");
+export const metadata = { title: { absolute: meta.title }, description: meta.description, alternates: { canonical: `/blog/${meta.slug}` } };
 
 const FAQS = [
   ["Why do implant prices vary so much between offices?",
