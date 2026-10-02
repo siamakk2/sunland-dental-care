@@ -26,8 +26,9 @@ export function PageHero({ eyebrow, title, lead, image = "/images/dr-emami-hero.
 export function Reviewed() {
   return (
     <p className="mx-auto mt-2 max-w-6xl px-4 pt-6 text-sm text-ink-soft">
-      Clinical content reviewed by <Link href="/dr-emami" className="font-semibold underline decoration-brand/40 underline-offset-2 hover:text-brand">{DOCTOR.name}</Link>,
-      implantology specialist — {DOCTOR.yearsExperience} years in practice.
+      Treatment described on this page is provided at our Sunland office by{" "}
+      <Link href="/dr-emami" className="font-semibold underline decoration-brand/40 underline-offset-2 hover:text-brand">{DOCTOR.name}</Link>.
+      This page is general information, not a diagnosis or treatment plan — those require an examination.
     </p>
   );
 }
@@ -67,7 +68,7 @@ export function ReviewStrip() {
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-6">
         <div>
           <p className="font-semibold"><span aria-hidden="true" className="text-gold">★★★★★ </span>Trusted by Sunland-Tujunga for {new Date().getFullYear() - DOCTOR.established} years</p>
-          <p className="text-sm text-ink-soft">{REVIEWS.blurb} — patients describe care as honest, gentle, and thorough.</p>
+          <p className="text-sm text-ink-soft">{REVIEWS.blurb} — each platform keeps its own rating; read them there.</p>
         </div>
         <div className="flex gap-3 text-sm font-semibold">
           <a className="rounded-full border border-line bg-cream px-4 py-2 hover:border-brand hover:text-brand" href={REVIEWS.google} rel="noopener">Read Google reviews</a>

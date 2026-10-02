@@ -15,7 +15,7 @@ export default function CityPage({ data, image = "/images/hero-hallway.webp", po
 
       <PageHero image={image} pos={pos}
         eyebrow={`Serving ${data.city} · ${data.drive}`}
-        title={<>Dentist for <span className="text-brand">{data.short}</span></>}
+        title={<>Dentist serving <span className="text-brand">{data.short}</span></>}
         lead={data.lead} />
       <Reviewed />
       <ReviewStrip />
@@ -39,8 +39,9 @@ export default function CityPage({ data, image = "/images/hero-hallway.webp", po
           </ul>
         </div>
         <p className="rounded-2xl border border-line bg-parchment p-6 text-base">
-          <strong className="text-ink">Getting here from {data.short}:</strong> {data.drive} to {NAP.street}, {NAP.city}, CA {NAP.zip}.
-          Free parking. Open {NAP.hours}. <a className="font-semibold text-brand underline" href={NAP.mapsUrl}>Open in Maps →</a>
+          <strong className="text-ink">Our office is in Sunland, not {data.short}.</strong> We are at {NAP.street}, {NAP.city}, CA {NAP.zip},
+          {" "}{data.drive} from {data.short}. Drive times are estimates and vary with traffic and time of day. Open {NAP.hours}.
+          {" "}<a className="font-semibold text-brand underline" href={NAP.mapsUrl}>Get directions →</a>
         </p>
       </section>
 

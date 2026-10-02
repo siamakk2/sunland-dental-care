@@ -51,9 +51,9 @@ export default function Page() {
         breadcrumbs([{ name: "Home", path: "/" }, { name: "Ask Dr. Emami", path: "/ask-dr-emami" }]))}</Schema>
 
       <PageHero image="/images/ph-portrait-tight.jpg" pos="center 15%"
-        eyebrow={`Answered by ${DOCTOR.name} · ${DOCTOR.yearsExperience} years in practice`}
+        eyebrow="Questions patients ask in our Sunland office"
         title={<>The questions patients <span className="text-brand">actually ask</span></>}
-        lead="These aren't questions we invented for a website. They're the ones patients ask Dr. Emami in the chair — collected from recent weeks in the Sunland office and answered here the way she answers them in person." />
+        lead="These aren't questions we invented for a website — they're what patients actually asked in the chair over recent weeks. The answers below are general patient education from the practice. For an answer about your own mouth, Dr. Emami will give you one over the phone." />
       <ReviewStrip />
 
       <section className="mx-auto max-w-4xl px-4 py-12">

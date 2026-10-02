@@ -10,8 +10,8 @@ export const metadata = {
 
 const FAQS = [
   ["¿Hay un dentista que hable español en Sunland?", `Sí. En Sunland Dental Care, en ${NAP.street}, ${NAP.city}, CA, atendemos a pacientes en español, inglés y farsi. Llame al ${NAP.phone}.`],
-  ["¿Quién es la Dra. Emami?", `La ${DOCTOR.name} es especialista en implantología con ${DOCTOR.yearsExperience} años de experiencia clínica y miles de implantes colocados. Fundó Sunland Dental Care en ${DOCTOR.established} y realiza personalmente cada etapa del tratamiento.`],
-  ["¿Cuánto cuesta un implante dental?", "Un implante único completo — consulta, imágenes 3D, cirugía guiada y corona final — cuesta $2,000, precio fijo y sin cargos ocultos."],
+  ["¿Quién es la Dra. Emami?", `La ${DOCTOR.name} es dentista con enfoque clínico en implantología y ${DOCTOR.yearsExperience} años de experiencia clínica y miles de implantes colocados. Fundó Sunland Dental Care en ${DOCTOR.established} y realiza personalmente cada etapa del tratamiento.`],
+  ["¿Cuánto cuesta un implante dental?", "Un implante único completo — consulta, imágenes 3D, cirugía guiada y corona final — cuesta $2,000, precio fijo para el tratamiento estándar; cualquier paso adicional se cotiza por separado y por escrito."],
   ["¿Dónde están y cuál es el horario?", `${NAP.street}, ${NAP.city}, CA ${NAP.zip}, sobre Foothill Boulevard en el corazón de Sunland-Tujunga. Horario: lunes a viernes de 9:00 AM a 5:00 PM; cerrado sábados y domingos.`],
   ["¿Aceptan pacientes nuevos?", "Sí, con gusto. La Dra. Emami revisa personalmente cada consulta de paciente nuevo."],
   ["¿Aceptan seguro dental?", "La oficina trabaja con la mayoría de los planes PPO. Llame con los datos de su plan y le verificamos la cobertura y su costo exacto antes de empezar."],

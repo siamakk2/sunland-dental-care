@@ -6,7 +6,7 @@ import ContactForm from "../../components/ContactForm";
 export const metadata = {
   title: "Contact & Location — Sunland Dental Care, Sunland CA",
   description: `Contact Sunland Dental Care: ${NAP.street}, ${NAP.city}, CA ${NAP.zip}. Call ${NAP.phone}. Open ${NAP.hours}. On Foothill Blvd in the heart of Sunland-Tujunga.`,
-  alternates: { canonical: "/contact" },
+  alternates: { canonical: "/contact", languages: { "en-US": "/contact", "es-US": "/es/contacto" } },
 };
 
 export default function Page() {

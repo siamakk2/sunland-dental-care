@@ -2,6 +2,8 @@ import Link from "next/link";
 import { NAP, DOCTOR, OFFER } from "../../../lib/practice";
 import { Schema, graph, breadcrumbs, faqSchema, serviceSchema, webPage } from "../../../lib/schema";
 import { EsHero, EsProse, EsFaq, EsCta } from "../../../components/EsPage";
+import OfferTable from "../../../components/OfferTable";
+import OfferNote from "../../../components/OfferNote";
 
 export const metadata = {
   title: "Implantes Dentales en Sunland, CA — $2,000 Completo",
@@ -11,7 +13,7 @@ export const metadata = {
 
 const FAQS = [
   ["¿Qué incluye el implante dental de $2,000?",
-   "Todo lo necesario para un implante único: la consulta y el examen, las imágenes 3D y la planificación quirúrgica, la colocación guiada del implante y la corona final. Un precio fijo, sin cargos ocultos, todo realizado en la oficina de Sunland."],
+   "Todo lo necesario para un implante único: la consulta y el examen, las imágenes 3D y la planificación quirúrgica, la colocación guiada del implante y la corona final. Un precio fijo, para el tratamiento estándar, todo realizado en la oficina de Sunland."],
   ["¿Por qué cuesta mucho menos que en otras oficinas de Los Ángeles?",
    "Porque en gran parte de Los Ángeles cada etapa se envía a un especialista distinto, y cada uno cobra sus propios honorarios. La Dra. Emami realiza todas las etapas personalmente en una sola oficina, lo que elimina esos costos — no la calidad."],
   ["¿Duele la cirugía de implante?",
@@ -38,13 +40,15 @@ export default function Page() {
           <li><strong>Colocación guiada del implante</strong></li>
           <li><strong>Corona final</strong></li>
         </ul>
-        <p>Un precio fijo, sin cargos ocultos, realizado de principio a fin por la Dra. Emami en la oficina de Sunland.</p>
+        <p>Un precio fijo para el tratamiento estándar de un implante único, realizado de principio a fin por la Dra. Emami.</p>
+        <OfferNote es />
         <h2>Planificado en 3D antes de la cirugía</h2>
         <p>Cada implante se planifica en un entorno virtual con imágenes 3D de su mandíbula. La Dra. Emami determina la posición, el ángulo y la profundidad exactos de forma digital — y entra a la cirugía con guías, no con suposiciones. El resultado: mayor precisión, un sitio quirúrgico más pequeño y una recuperación notablemente más rápida.</p>
         <h2>Una sola doctora, de principio a fin</h2>
         <p>En gran parte de Los Ángeles un implante significa tres oficinas: el dentista general, el cirujano oral y el dentista restaurador. Aquí, la {DOCTOR.name} realiza la consulta, la colocación y la restauración ella misma, en la misma oficina donde atiende desde {DOCTOR.established}. La continuidad es control de calidad.</p>
         <p>Vea también nuestros <Link href="/es/precios">precios</Link> y <Link href="/es/servicios">todos los servicios</Link>.</p>
       </EsProse>
+      <OfferTable es />
       <EsFaq faqs={FAQS} title="Preguntas sobre implantes dentales" />
       <EsCta title="Descubra si un implante es adecuado para usted" body={`La consulta y las imágenes 3D están incluidas en el precio completo de $2,000. Llame al ${NAP.phone} — se habla español.`} />
     </>

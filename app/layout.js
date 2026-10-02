@@ -4,6 +4,7 @@ import "./globals.css";
 import Link from "next/link";
 import Script from "next/script";
 import { Header, Footer, MobileBar } from "../components/Chrome";
+import TrackCalls from "../components/TrackCalls";
 import { SITE, NAP, NAV, SERVICES, MORE_SERVICES, DOCTOR } from "../lib/practice";
 import { CITIES } from "../lib/cities";
 
@@ -58,6 +59,7 @@ gtag('config', 'G-XNGTJRKYRW');`,
         />
       </head>
       <body className="min-h-screen antialiased">
+        <TrackCalls />
         <Header />
         <main className="pb-16 md:pb-0">{children}</main>
         <Footer />

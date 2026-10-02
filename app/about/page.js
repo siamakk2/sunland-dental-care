@@ -5,7 +5,7 @@ import { PageHero, Cta, Prose } from "../../components/blocks";
 
 export const metadata = {
   title: "About Sunland Dental Care — Serving Sunland-Tujunga Since 1991",
-  description: `Established in 1991, Sunland Dental Care has provided three decades of continuous care to Sunland-Tujunga from the same Foothill Blvd office, led by implantology specialist ${DOCTOR.name}.`,
+  description: `Established in 1991, Sunland Dental Care has provided three decades of continuous care to Sunland-Tujunga from the same Foothill Blvd office, led by ${DOCTOR.name}.`,
   alternates: { canonical: "/about" },
 };
 
@@ -20,7 +20,7 @@ export default function Page() {
         <h2>Thirty-five years on Foothill Boulevard</h2>
         <p>Sunland Dental Care opened its doors at {NAP.street} in {DOCTOR.established} and has never moved. In a city where practices change hands and names every few years, that continuity means your records, your history, and your doctor stay put — and treatment decisions are made by someone who expects to see you again for decades.</p>
         <h2>Led by Dr. Mahvash Emami, DDS</h2>
-        <p>The practice is founded and led by <Link href="/dr-emami" className="font-semibold text-ink underline decoration-brand/40 underline-offset-2 hover:text-brand">{DOCTOR.name}</Link>, an implantology specialist with {DOCTOR.yearsExperience} years of clinical experience and thousands of implants placed. Her philosophy shapes everything here: conservative treatment, gums-first hygiene, and honest recommendations — including telling patients when they <em>don't</em> need work.</p>
+        <p>The practice is founded and led by <Link href="/dr-emami" className="font-semibold text-ink underline decoration-brand/40 underline-offset-2 hover:text-brand">{DOCTOR.name}</Link>, a dentist with a clinical focus on implant dentistry, with {DOCTOR.yearsExperience} years of clinical experience and thousands of implants placed. Her philosophy shapes everything here: conservative treatment, gums-first hygiene, and honest recommendations — including telling patients when they <em>don't</em> need work.</p>
         <h2>Everything in-house</h2>
         <p>Consultation, 3D imaging, implant surgery, restorations, cosmetic care, aligners, and family dentistry all happen in one office. No referral maze, no repeating your story to a new specialist, no stacked fees.</p>
       </Prose>

@@ -4,8 +4,8 @@ import { Schema, graph, breadcrumbs, faqSchema, personSchema } from "../../lib/s
 
 export const metadata = {
   title: "Meet Dr. Mahvash Emami, DDS — 40 Years of Implant Dentistry",
-  description: `${DOCTOR.name} is an implantology specialist in Sunland, CA with ${DOCTOR.yearsExperience} years of clinical experience and thousands of implants placed. Founder of Sunland Dental Care, serving the same Foothill Blvd community since ${DOCTOR.established}.`,
-  alternates: { canonical: "/dr-emami" },
+  description: `${DOCTOR.name} is a dentist in Sunland, CA with a clinical focus on implant dentistry and ${DOCTOR.yearsExperience} years of clinical experience and thousands of implants placed. Founder of Sunland Dental Care, serving the same Foothill Blvd community since ${DOCTOR.established}.`,
+  alternates: { canonical: "/dr-emami", languages: { "en-US": "/dr-emami", "es-US": "/es/dra-emami" } },
 };
 
 const PAGE_FAQS = [
@@ -40,7 +40,7 @@ export default function DrEmami() {
           <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-transparent" />
         </div>
         <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-[.72fr_1fr] md:py-20">
-          <img src="/images/ph-reception.jpg" alt={`${DOCTOR.name}, implantology specialist at Sunland Dental Care in Sunland, CA`}
+          <img src="/images/ph-reception.jpg" alt={`${DOCTOR.name}, dentist at Sunland Dental Care in Sunland, CA`}
                className="mx-auto w-full max-w-sm rounded-3xl border border-line shadow-md" />
           <div>
             <p className="eyebrow text-brand">Founder · Sunland Dental Care · Est. {DOCTOR.established}</p>

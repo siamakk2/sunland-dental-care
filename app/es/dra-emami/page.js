@@ -5,7 +5,7 @@ import { EsProse, EsFaq, EsCta } from "../../../components/EsPage";
 
 export const metadata = {
   title: "Conozca a la Dra. Mahvash Emami, DDS — 40 Años de Experiencia",
-  description: "La Dra. Mahvash Emami, DDS es especialista en implantología en Sunland, CA con 40 años de experiencia clínica y miles de implantes colocados. Fundadora de Sunland Dental Care desde 1991.",
+  description: "La Dra. Mahvash Emami, DDS es dentista en Sunland, CA con enfoque clínico en implantología con 40 años de experiencia clínica y miles de implantes colocados. Fundadora de Sunland Dental Care desde 1991.",
   alternates: { canonical: "/es/dra-emami", languages: { "en-US": "/dr-emami", "es-US": "/es/dra-emami" } },
 };
 
@@ -21,13 +21,13 @@ export default function Page() {
       <Schema>{graph({ "@type": "ProfilePage", "@id": `${SITE.url}/es/dra-emami#page`, url: `${SITE.url}/es/dra-emami`, name: "Dra. Mahvash Emami, DDS", inLanguage: "es-US", mainEntity: { "@id": `${SITE.url}/#dr-emami` } }, faqSchema(FAQS), breadcrumbs([{ name: "Inicio", path: "/es" }, { name: "Dra. Emami", path: "/es/dra-emami" }]))}</Schema>
       <section className="border-b border-line bg-parchment/60">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-[.72fr_1fr]">
-          <img src="/images/ph-reception.jpg" alt="Dra. Mahvash Emami, DDS, especialista en implantología en Sunland, CA"
+          <img src="/images/ph-reception.jpg" alt="Dra. Mahvash Emami, DDS, dentista en Sunland, CA con enfoque clínico en implantología"
                className="arch mx-auto w-full max-w-sm border border-line shadow-md" />
           <div>
             <span className="accent-bar" aria-hidden="true"></span>
             <p className="chip">Fundadora · Sunland Dental Care · Desde {DOCTOR.established}</p>
             <h1 className="mt-3 text-4xl font-bold md:text-5xl">Dra. Mahvash Emami, <span className="text-brand">DDS</span></h1>
-            <p className="mt-2 text-lg text-ink-soft">Especialista en implantología · Fundadora de Sunland Dental Care</p>
+            <p className="mt-2 text-lg text-ink-soft">Enfoque clínico en implantología · Fundadora de Sunland Dental Care</p>
             <p className="mt-6 max-w-xl text-ink-soft">
               En implantología no hay sustituto para la experiencia. La Dra. Emami ha dedicado cuatro décadas a perfeccionar
               el arte del implante dental — miles colocados, planificados en un entorno 3D antes de comenzar la cirugía y

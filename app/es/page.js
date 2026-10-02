@@ -14,7 +14,7 @@ const FAQS = [
   ["¿Cuánto cuesta un implante dental?",
    "Un implante dental completo cuesta $2,000 con precio fijo: consulta, imágenes 3D, cirugía guiada y la corona final. Sin cargos ocultos y todo se realiza en nuestra oficina de Sunland."],
   ["¿Quién es la doctora?",
-   "La Dra. Mahvash Emami, DDS, especialista en implantología con 40 años de experiencia clínica y miles de implantes colocados. Atiende a la comunidad de Sunland-Tujunga desde 1991 en la misma dirección."],
+   "La Dra. Mahvash Emami, DDS, dentista con enfoque clínico en implantología y 40 años de experiencia clínica y miles de implantes colocados. Atiende a la comunidad de Sunland-Tujunga desde 1991 en la misma dirección."],
 ];
 
 export default function Home() {
@@ -31,7 +31,7 @@ export default function Home() {
             </h1>
             <p className="mt-6 max-w-xl text-lg font-medium text-ink-soft">
               Sunland Dental Care es la consulta de la <Link href="/es/dra-emami" className="font-bold text-ink underline decoration-brand decoration-2 underline-offset-4 hover:text-brand">Dra. Mahvash Emami, DDS</Link> —
-              especialista en implantología con {DOCTOR.yearsExperience} años de experiencia y miles de implantes colocados.
+              dentista con enfoque clínico en implantología y {DOCTOR.yearsExperience} años de experiencia y miles de implantes colocados.
               Cada tratamiento empieza con el mismo principio: conservar lo sano y corregir solo lo necesario.
             </p>
             <p className="mt-6 text-base font-semibold text-ink">Se habla español · English · <span lang="fa">فارسی</span></p>
@@ -100,7 +100,7 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-4 py-14">
         <div className="rounded-3xl bg-brand px-6 py-12 text-white md:px-12">
           <h2 className="max-w-2xl text-3xl font-bold md:text-4xl">Un implante dental completo por $2,000. Completo de verdad.</h2>
-          <p className="mt-4 max-w-2xl text-white/85">Consulta y examen, imágenes 3D y planificación quirúrgica, colocación guiada del implante y su corona final — un precio fijo, sin cargos ocultos, realizado de principio a fin por la Dra. Emami.</p>
+          <p className="mt-4 max-w-2xl text-white/85">Consulta y examen, imágenes 3D y planificación quirúrgica, colocación guiada del implante y su corona final — un precio fijo, para el tratamiento estándar, realizado de principio a fin por la Dra. Emami.</p>
           <Link href="/es/implantes-dentales" className="mt-6 inline-block rounded-full bg-white px-6 py-3 font-bold text-brand hover:bg-cream">Cómo funciona →</Link>
         </div>
       </section>

@@ -2,22 +2,24 @@ import { NAP, DOCTOR, OFFER } from "../../lib/practice";
 import { Schema, graph, breadcrumbs, faqSchema, serviceSchema, webPage } from "../../lib/schema";
 import SmileGallery from "../../components/SmileGallery";
 import { PageHero, Reviewed, FaqBlock, Cta, Prose, ReviewStrip } from "../../components/blocks";
+import OfferTable from "../../components/OfferTable";
+import OfferNote from "../../components/OfferNote";
 
 export const metadata = {
   title: "Dental Implants in Sunland, CA — Complete for $2,000",
   description: `Complete single dental implants for $2,000 fixed — consultation, 3D imaging, guided surgery, and crown, all in-house by ${DOCTOR.name}. Thousands placed over ${DOCTOR.yearsExperience} years. Sunland, CA.`,
-  alternates: { canonical: "/dental-implants" },
+  alternates: { canonical: "/dental-implants", languages: { "en-US": "/dental-implants", "es-US": "/es/implantes-dentales" } },
 };
 
 const FAQS = [
   ["What does the $2,000 dental implant include?",
-   "Everything a single implant requires: the consultation and exam, 3D imaging and surgical planning, guided placement of the implant, and the final crown restoration. One fixed price, no hidden fees, all performed in the Sunland office."],
+   "The standard single-implant treatment: consultation and exam, 3D imaging and surgical planning, guided placement, and the final crown — one fixed price, performed in the Sunland office. If your case first needs an extraction, bone grafting, a sinus lift, or gum treatment, those are quoted separately, and you receive the complete written number before treatment begins. See the full breakdown table on this page."],
   ["Why is this so much less than other Los Angeles offices?",
    "The average single implant in Los Angeles often exceeds $5,000 because each stage is referred to a different specialist, each with their own fees. Dr. Emami performs every stage herself in one office, which removes those layers of cost — not the quality."],
   ["Is implant surgery painful?",
    "3D-guided placement is minimally invasive: the surgical site is planned digitally in advance, so procedures are shorter and gentler, with most patients reporting far less discomfort and downtime than they expected."],
   ["How long do dental implants last?",
-   "With healthy gums and normal home care, a well-placed implant is designed to last decades — often a lifetime. Gum health is the foundation, which is why periodontal care is part of every implant plan at Sunland Dental Care."],
+   "Published long-term studies report high survival rates for well-placed implants, and many last for decades. Outcomes vary from person to person: gum health, smoking, grinding, diabetes control, and maintenance all affect how long an implant lasts, and no dentist can guarantee an individual result."],
   ["Am I a candidate for a dental implant?",
    "Most adults missing one or more teeth are candidates. Bone density, gum health, and overall health are assessed at the consultation using 3D imaging, and Dr. Emami will tell you honestly if an implant is not the right choice for your case."],
 ];
@@ -39,12 +41,14 @@ export default function Page() {
           {OFFER.includes.map((i) => <li key={i}><strong>{i}</strong></li>)}
         </ul>
         <p>{OFFER.note}</p>
+        <OfferNote />
         <h2>Planned in 3D before surgery begins</h2>
-        <p>Every implant is planned in a virtual environment using 3D imaging of your jaw. Dr. Emami determines the exact position, angle, and depth of the implant digitally — then guides go into surgery, not guesswork. The result is 100% planned precision, smaller surgical sites, and significantly faster recovery.</p>
+        <p>Every implant is planned in a virtual environment using 3D imaging of your jaw. Dr. Emami determines the exact position, angle, and depth of the implant digitally — then guides go into surgery, not guesswork. The result is placement guided by that plan rather than by estimation, with a smaller surgical site and, for most patients, a quicker recovery than they expected.</p>
         <h2>One doctor, start to finish</h2>
         <p>In much of Los Angeles, an implant means three offices: a general dentist, an oral surgeon, and a restorative dentist. Here, {DOCTOR.name} performs the consultation, the placement, and the restoration herself, in the same office she has practiced in since {DOCTOR.established}. Continuity is quality control.</p>
       </Prose>
       <SmileGallery treatment="dental-implants" />
+      <OfferTable />
       <FaqBlock title="Dental implant questions" faqs={FAQS} />
       <Cta title="Find out if an implant is right for you" body={`Bring your questions — the consultation and 3D imaging are part of the $2,000 complete price. Call ${NAP.phone}.`} />
     </>

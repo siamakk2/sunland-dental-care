@@ -11,7 +11,7 @@ const FAQS = [
   ["¿Hay un dentista que hable español cerca de Sun Valley?",
    "Sí. Sunland Dental Care, en 7902 Foothill Blvd, Sunland, CA 91040 — a unos diez minutos de Sun Valley — atiende a pacientes en español, inglés y farsi. Llame al (818) 353-5520 y con gusto le atendemos en su idioma."],
   ["¿Cuánto cuesta un implante dental?",
-   "Un implante dental completo cuesta $2,000 con precio fijo: incluye la consulta, las imágenes 3D, la cirugía guiada y la corona final. Sin cargos ocultos. En Los Ángeles un solo implante suele superar los $5,000."],
+   "Un implante dental completo cuesta $2,000 con precio fijo: incluye la consulta, las imágenes 3D, la cirugía guiada y la corona final. Los pasos adicionales que su caso requiera se cotizan por separado y por escrito. Las guías de costos publicadas suelen ubicar un implante único en Los Ángeles entre $3,000 y $6,000."],
   ["¿Atienden a pacientes sin seguro dental?",
    "Sí. Muchos de nuestros pacientes pagan directamente. Cada plan de tratamiento incluye un presupuesto exacto por escrito antes de programar nada, y la oficina puede conversar arreglos de pago para tratamientos grandes."],
   ["¿Puedo llevar a toda mi familia?",

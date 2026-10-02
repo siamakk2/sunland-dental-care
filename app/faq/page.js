@@ -5,22 +5,22 @@ import { PageHero, Cta } from "../../components/blocks";
 export const metadata = {
   title: "Patient FAQ — Sunland Dental Care",
   description: "Answers to common questions about Sunland Dental Care: the $2,000 complete implant, patient comfort, insurance, hours, and Dr. Emami's minimally invasive approach.",
-  alternates: { canonical: "/faq" },
+  alternates: { canonical: "/faq", languages: { "en-US": "/faq", "es-US": "/es/preguntas-frecuentes" } },
 };
 
 const FAQS = [
   ["What is Sunland Dental Care's approach to patient comfort?",
    "Comfort starts with communication: every procedure is explained clearly before it begins, and treatment is as conservative and gentle as the case allows. Patients regularly describe their visits as far easier than they feared — even for extractions and implant surgery."],
   ["Who is Dr. Emami?",
-   `${DOCTOR.name} is an implantology specialist with ${DOCTOR.yearsExperience} years of clinical experience and thousands of implants placed. She founded Sunland Dental Care in ${DOCTOR.established} and still personally performs every stage of treatment.`],
+   `${DOCTOR.name} is a dentist with a clinical focus on implant dentistry, with ${DOCTOR.yearsExperience} years of clinical experience and thousands of implants placed. She founded Sunland Dental Care in ${DOCTOR.established} and still personally performs every stage of treatment.`],
   ["How much does a dental implant cost?",
-   "A complete single implant — consultation, 3D imaging, guided surgery, and final crown — is $2,000, fixed, with no hidden fees."],
+   "A complete single implant — consultation, 3D imaging, guided surgery, and final crown — is $2,000 fixed. If your case first needs an extraction, grafting, a sinus lift, or gum treatment, those are quoted separately and confirmed in writing before treatment begins."],
   ["Where is the office and when is it open?",
    `${NAP.street}, ${NAP.city}, CA ${NAP.zip}, on Foothill Boulevard in the heart of Sunland-Tujunga. Hours are ${NAP.hours}; the office is closed Saturday and Sunday. Call ${NAP.phone}.`],
   ["Do you take new patients?",
    "Yes — new patients are welcome, and Dr. Emami personally reviews every new-patient consultation. See the New Patients page for what to expect at a first visit."],
   ["Do you accept insurance?",
-   "Call the office with your plan details and the front desk will verify coverage and give you exact out-of-pocket costs before treatment begins."],
+   "Call with your plan name and member ID. We will tell you whether we are in-network with your plan and what it is likely to cover, and you get a written treatment estimate before anything is scheduled."],
   ["What languages does the office serve?",
    "The office welcomes patients in English, Spanish, and Farsi — reflecting the Foothill and San Fernando Valley communities it has served since 1991."],
   ["What makes this practice different from other Los Angeles dentists?",

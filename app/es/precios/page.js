@@ -2,10 +2,12 @@ import Link from "next/link";
 import { NAP, OFFER, DOCTOR } from "../../../lib/practice";
 import { Schema, graph, breadcrumbs, faqSchema, webPage } from "../../../lib/schema";
 import { EsHero, EsProse, EsFaq, EsCta } from "../../../components/EsPage";
+import OfferTable from "../../../components/OfferTable";
+import OfferNote from "../../../components/OfferNote";
 
 export const metadata = {
   title: "Precios y Seguros — Sunland Dental Care, Sunland CA",
-  description: "Precios dentales transparentes en Sunland, CA: implante completo por $2,000 fijo, sin cargos ocultos. Verificamos su seguro PPO y le damos un presupuesto exacto por escrito antes de empezar.",
+  description: "Precios dentales transparentes en Sunland, CA: implante completo por $2,000 fijo, con los pasos adicionales cotizados por separado. Verificamos su seguro PPO y le damos un presupuesto exacto por escrito antes de empezar.",
   alternates: { canonical: "/es/precios", languages: { "en-US": "/pricing", "es-US": "/es/precios" } },
 };
 
@@ -32,10 +34,12 @@ export default function Page() {
               <li key={i} className="rounded-xl border border-white/25 px-4 py-3">{i}</li>
             ))}
           </ul>
-          <p className="mt-4 max-w-2xl text-sm text-white/75">Un precio fijo, sin cargos ocultos, realizado de principio a fin por la Dra. Emami. Para comparar: en Los Ángeles un solo implante suele superar los $5,000.</p>
+          <p className="mt-4 max-w-2xl text-sm text-white/75">Un precio fijo para el tratamiento estándar, realizado de principio a fin por la Dra. Emami.</p>
+          <OfferNote es tone="dark" />
           <Link href="/es/implantes-dentales" className="mt-6 inline-block rounded-full bg-white px-6 py-3 font-bold text-brand hover:bg-cream">Sobre el proceso →</Link>
         </div>
       </section>
+      <OfferTable es />
       <EsProse>
         <h2>Por qué nuestros precios funcionan así</h2>
         <p>La mayoría de las facturas de implantes en Los Ángeles son tres facturas: la del dentista general, la del cirujano oral y la del dentista restaurador. La {DOCTOR.name} cumple los tres papeles en una sola oficina, y ese ahorro va al paciente. El precio es más bajo porque el proceso es mejor, no al revés.</p>

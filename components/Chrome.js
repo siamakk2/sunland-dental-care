@@ -68,6 +68,9 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
+            <Link href={es ? "/es/contacto" : "/contact"} className="hidden rounded-full border-2 border-ink px-4 py-2 text-sm font-bold hover:border-brand hover:text-brand xl:inline-block">
+              {es ? "Solicitar cita" : "Request Appointment"}
+            </Link>
             <a href={`tel:${NAP.phoneIntl}`} className="hidden rounded-full bg-brand px-4 py-2.5 text-sm font-bold text-white shadow-md hover:bg-brand-dark sm:inline-block">
               {NAP.phone}
             </a>
@@ -111,7 +114,12 @@ export function Header() {
                 ))}
               </ul>
             </nav>
-            <div className="grid grid-cols-2 gap-3 border-t border-line px-4 py-4">
+            <div className="border-t border-line px-4 pt-4">
+              <Link href={es ? "/es/contacto" : "/contact"} className="block rounded-full bg-ink px-4 py-3 text-center text-sm font-bold text-cream">
+                🗓️ {es ? "Solicitar una cita" : "Request an Appointment"}
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 gap-3 px-4 py-4">
               <a href={`tel:${NAP.phoneIntl}`} className="rounded-full bg-brand px-4 py-3 text-center text-sm font-bold text-white">📞 {NAP.phone}</a>
               <a href={`sms:${NAP.phoneIntl}`} className="rounded-full border-2 border-brand px-4 py-3 text-center text-sm font-bold text-brand">💬 {t.text}</a>
             </div>

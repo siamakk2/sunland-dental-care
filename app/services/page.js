@@ -6,7 +6,7 @@ import { PageHero, Reviewed, Cta, ReviewStrip } from "../../components/blocks";
 export const metadata = {
   title: "All Dental Services — Sunland Dental Care, Sunland CA",
   description: `Every service offered at Sunland Dental Care in Sunland, CA: dental implants, full-arch/All-on-4, periodontal surgery, sedation for implants, cosmetic dentistry, Invisalign, dentures, root canals, whitening, family dentistry, and emergency care — all performed in-house by ${DOCTOR.name}.`,
-  alternates: { canonical: "/services" },
+  alternates: { canonical: "/services", languages: { "en-US": "/services", "es-US": "/es/servicios" } },
 };
 
 const GROUPS = [

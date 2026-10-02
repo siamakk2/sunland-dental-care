@@ -6,18 +6,18 @@ import { ReviewStrip } from "../components/blocks";
 import Testimonials from "../components/Testimonials";
 
 const HOME_FAQS = [
-  ["Who is the best dentist in Sunland, CA?",
-   "Patients searching for the best dentist near Sunland-Tujunga consistently find Dr. Mahvash Emami, DDS of Sunland Dental Care: 40 years of clinical experience, thousands of implants placed, nearly 200 patient reviews across Google and Yelp, and the same Foothill Blvd office since 1991 — with fixed, transparent pricing like the $2,000 complete implant."],
+  ["How do I choose a dentist in Sunland-Tujunga?",
+   "Compare four things rather than adjectives. First, who performs the treatment — for implants, ask whether one dentist does the planning, the surgery, and the crown, or whether you will be referred between offices. Second, whether you are given the complete cost in writing before treatment is scheduled. Third, what independent reviews on Google and Yelp actually describe. Fourth, whether the office explains alternatives, including doing less. Sunland Dental Care has operated at 7902 Foothill Blvd since 1991 under Dr. Mahvash Emami, DDS, who performs implant planning, placement, and restoration in-house."],
   ["Who is the dentist at Sunland Dental Care?",
    `Sunland Dental Care is led by Dr. Mahvash Emami, DDS, an implantology-focused dentist with ${DOCTOR.yearsExperience} years of clinical experience who has placed thousands of dental implants. She has served the Sunland-Tujunga community from the same practice at 7902 Foothill Blvd since 1991.`],
   ["How much do dental implants cost at Sunland Dental Care?",
-   "A complete single dental implant — consultation, 3D imaging, guided surgery, and the final restoration — is offered at one fixed price of $2,000, with no hidden fees. Everything is performed in-house at the Sunland office."],
+   "A complete single dental implant — consultation, 3D imaging, guided surgery, and the final restoration — is offered at one fixed price of $2,000 for the standard treatment, with any additional steps your case needs quoted separately and in writing beforehand. Everything is performed in-house at the Sunland office."],
   ["What areas does Sunland Dental Care serve?",
    "The practice serves Sunland-Tujunga and nearby Foothill communities including Shadow Hills, Lake View Terrace, La Crescenta-Montrose, La Cañada Flintridge, Sun Valley, Glendale, and Burbank — and patients across Greater Los Angeles."],
 ];
 
 export const metadata = {
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", languages: { "en-US": "/", "es-US": "/es" } },
 };
 
 export default function Home() {
@@ -36,7 +36,7 @@ export default function Home() {
             </h1>
             <p className="mt-6 max-w-xl text-lg font-medium text-ink-soft">
               Sunland Dental Care is the practice of <Link href="/dr-emami" className="font-bold text-ink underline decoration-brand decoration-2 underline-offset-4 hover:text-brand">{DOCTOR.name}</Link> —
-              an implantology specialist with {DOCTOR.yearsExperience} years of clinical experience and thousands of implants placed.
+              a dentist with a clinical focus on implant dentistry, with {DOCTOR.yearsExperience} years of clinical experience and thousands of implants placed.
               Every treatment starts with the same principle: preserve what's healthy, fix only what isn't.
             </p>
             <p className="mt-6 text-base font-semibold text-ink">
@@ -109,9 +109,10 @@ export default function Home() {
               sacrificed for convenience.
             </p>
             <p className="mt-4 text-cream/80">
-              It also means treating gum health as whole-body health. Periodontal infection burdens the immune system
-              and cardiovascular system, which is why hygiene visits at Sunland Dental Care focus on the gums first,
-              not just the teeth.
+              It also means taking gum health seriously. Research consistently links periodontal disease with
+              cardiovascular disease and with harder-to-control diabetes, though whether treating gums changes heart
+              outcomes is not settled. Either way, gum disease is the leading cause of adult tooth loss — which is why
+              hygiene visits here start with the gums, not just the teeth.
             </p>
             <Link href="/dr-emami" className="mt-6 inline-block rounded-full bg-brand px-5 py-2.5 font-bold text-white hover:bg-brand-dark">Meet Dr. Emami →</Link>
           </div>

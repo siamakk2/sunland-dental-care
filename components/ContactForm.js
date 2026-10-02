@@ -4,9 +4,18 @@ import { NAP } from "../lib/practice";
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", phone: "", topic: "New patient appointment", days: "Any weekday", time: "Any time", message: "" });
-  const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
+  const [started, setStarted] = useState(false);
+  const track = (name) => {
+    if (typeof window !== "undefined" && typeof window.gtag === "function")
+      window.gtag("event", name, { page_path: window.location.pathname });
+  };
+  const set = (k) => (e) => {
+    if (!started) { setStarted(true); track("appointment_form_start"); }
+    setForm({ ...form, [k]: e.target.value });
+  };
 
   const send = () => {
+    track("appointment_form_submit");
     const subject = `Appointment request${form.name ? ` — ${form.name}` : ""} — ${form.topic}`;
     const body = `APPOINTMENT REQUEST\n\nName: ${form.name}\nPhone: ${form.phone}\nTopic: ${form.topic}\nPreferred days: ${form.days}\nPreferred time: ${form.time}\n\n${form.message}`;
     window.location.href = `mailto:${NAP.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;

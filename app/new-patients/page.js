@@ -5,7 +5,7 @@ import { PageHero, Cta, Prose, ReviewStrip } from "../../components/blocks";
 export const metadata = {
   title: "New Patients — What to Expect at Sunland Dental Care",
   description: `New patients are welcome at Sunland Dental Care in Sunland, CA. What to expect at your first visit with ${DOCTOR.name}: a thorough exam, honest findings, and a clear plan with exact pricing.`,
-  alternates: { canonical: "/new-patients" },
+  alternates: { canonical: "/new-patients", languages: { "en-US": "/new-patients", "es-US": "/es/nuevos-pacientes" } },
 };
 
 const FAQS = [
