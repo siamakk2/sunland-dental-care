@@ -3,15 +3,16 @@ import { NAP, DOCTOR, REVIEWS } from "../lib/practice";
 
 export function PageHero({ eyebrow, title, lead, image = "/images/dr-emami-hero.webp", pos = "center" }) {
   return (
-    <section className="border-b border-line bg-cream">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 md:grid-cols-[1.1fr_.9fr] md:py-16">
+    <section className="relative overflow-hidden border-b border-line bg-cream">
+      <div className="scanline pointer-events-none absolute inset-0 opacity-40" aria-hidden="true"></div>
+      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 md:grid-cols-[1.1fr_.9fr] md:py-16">
         <div>
           <span className="accent-bar" aria-hidden="true"></span>
           <p className="chip">{eyebrow}</p>
-          <h1 className="mt-3 text-4xl font-bold leading-tight md:text-5xl">{title}</h1>
-          {lead && <p className="mt-5 max-w-xl text-lg text-ink-soft">{lead}</p>}
+          <h1 className="t-section mt-3 font-bold">{title}</h1>
+          {lead && <p className="t-lead mt-5 max-w-xl text-ink-soft">{lead}</p>}
         </div>
-        <div className="relative mx-auto w-60 md:w-72 lg:w-80">
+        <div className="reveal relative mx-auto w-60 md:w-72 lg:w-80">
           <div className="arch absolute -right-4 -top-4 h-full w-full bg-brand/10" aria-hidden="true"></div>
           <div className="absolute -left-7 top-10 h-24 w-24 rounded-full bg-brand" aria-hidden="true"></div>
           <img src={image} alt="" aria-hidden="true"
@@ -37,7 +38,7 @@ export function FaqBlock({ title = "Common questions", faqs }) {
   return (
     <section className="border-t border-line bg-parchment/60">
       <div className="mx-auto max-w-4xl px-4 py-16">
-        <h2 className="text-3xl font-semibold">{title}</h2>
+        <h2 className="t-section font-bold">{title}</h2>
         <dl className="mt-8 space-y-6">
           {faqs.map(([q, a]) => (
             <div key={q}><dt className="font-semibold">{q}</dt><dd className="mt-2 text-ink-soft">{a}</dd></div>
@@ -51,7 +52,7 @@ export function FaqBlock({ title = "Common questions", faqs }) {
 export function Cta({ title = "Ready to talk about your smile?", body }) {
   return (
     <section className="mx-auto max-w-6xl px-4 py-16 text-center">
-      <h2 className="text-3xl font-semibold">{title}</h2>
+      <h2 className="t-section font-bold">{title}</h2>
       <p className="mx-auto mt-3 max-w-xl text-ink-soft">{body || "Call the office or send a message — Dr. Emami personally reviews every new-patient consultation."}</p>
       <div className="mt-6 flex flex-wrap justify-center gap-3">
         <a href={`tel:${NAP.phoneIntl}`} className="rounded-full bg-brand px-6 py-3 font-semibold text-white hover:bg-brand-dark">Call {NAP.phone}</a>
