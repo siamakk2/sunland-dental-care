@@ -34,34 +34,55 @@ float sdRoundBox(vec3 p, vec3 b, float r){
   vec3 q = abs(p) - b;
   return length(max(q,0.0)) + min(max(q.x,max(q.y,q.z)), 0.0) - r;
 }
+float sdEllipsoid(vec3 p, vec3 r){
+  float k0 = length(p/r);
+  float k1 = length(p/(r*r));
+  return k0*(k0-1.0)/max(k1, 1e-9);
+}
+float sdRoundCone(vec3 p, vec3 a, vec3 b, float r1, float r2){
+  vec3 ba = b-a;
+  float l2 = dot(ba,ba);
+  float rr = r1-r2;
+  float a2 = l2 - rr*rr;
+  float il2 = 1.0/l2;
+  vec3 pa = p-a;
+  float y = dot(pa,ba);
+  float z = y - l2;
+  vec3 xp = pa*l2 - ba*y;
+  float x2 = dot(xp,xp);
+  float y2 = y*y*l2;
+  float z2 = z*z*l2;
+  float k = sign(rr)*rr*rr*x2;
+  if(sign(z)*a2*z2 > k) return sqrt(max(x2+z2,0.0))*il2 - r2;
+  if(sign(y)*a2*y2 < k) return sqrt(max(x2+y2,0.0))*il2 - r1;
+  return (sqrt(max(x2*a2*il2,0.0)) + y*rr)*il2 - r1;
+}
 float sdCylinder(vec3 p, float h, float r){
   vec2 d = abs(vec2(length(p.xz), p.y)) - vec2(r, h);
   return min(max(d.x,d.y),0.0) + length(max(d,0.0));
 }
 
-// ── the molar ──
+// ── the molar: bulbous crown, four cusps, pinched neck, splayed tapering roots ──
 float tooth(vec3 p){
-  vec3 cp = p - vec3(0.0, 0.34, 0.0);
-  float crown = sdRoundBox(cp*vec3(1.0,1.18,1.06), vec3(0.40,0.27,0.36), 0.13);
-  // four cusps, unrolled (GLSL ES loops want constant bounds)
-  crown = smin(crown, sdSphere(cp - vec3( 0.22, 0.26,  0.20), 0.155), 0.13);
-  crown = smin(crown, sdSphere(cp - vec3(-0.22, 0.26,  0.20), 0.155), 0.13);
-  crown = smin(crown, sdSphere(cp - vec3( 0.22, 0.24, -0.20), 0.145), 0.13);
-  crown = smin(crown, sdSphere(cp - vec3(-0.22, 0.24, -0.20), 0.145), 0.13);
-  // two roots, splayed
-  float r1 = sdCapsule(p, vec3(-0.15, 0.08, 0.0), vec3(-0.27,-0.74, 0.03), 0.125);
-  float r2 = sdCapsule(p, vec3( 0.15, 0.08, 0.0), vec3( 0.27,-0.74,-0.03), 0.125);
-  return smin(crown, smin(r1, r2, 0.17), 0.15);
+  vec3 cp = p - vec3(0.0, 0.40, 0.0);
+  float crown = sdEllipsoid(cp, vec3(0.325, 0.255, 0.290));
+  float neck  = sdRoundCone(p, vec3(0.0,0.30,0.0), vec3(0.0,0.02,0.0), 0.255, 0.150);
+  crown = smin(crown, neck, 0.11);
+  crown = smin(crown, sdSphere(cp - vec3( 0.175, 0.185,  0.150), 0.125), 0.075);
+  crown = smin(crown, sdSphere(cp - vec3(-0.175, 0.185,  0.150), 0.125), 0.075);
+  crown = smin(crown, sdSphere(cp - vec3( 0.175, 0.175, -0.150), 0.118), 0.075);
+  crown = smin(crown, sdSphere(cp - vec3(-0.175, 0.175, -0.150), 0.118), 0.075);
+  float r1 = sdRoundCone(p, vec3(-0.10,0.10,0.0), vec3(-0.28,-0.82, 0.04), 0.105, 0.026);
+  float r2 = sdRoundCone(p, vec3( 0.10,0.10,0.0), vec3( 0.28,-0.82,-0.04), 0.105, 0.026);
+  return smin(crown, smin(r1, r2, 0.11), 0.10);
 }
 
-// ── the implant: post + abutment + threads ──
+// ── the implant: threaded post + abutment + restored crown ──
 float implant(vec3 p){
   float post = sdCylinder(p - vec3(0.0,-0.30,0.0), 0.42, 0.125);
-  // thread ridges
-  float th = sin(p.y*42.0)*0.5 + 0.5;
-  post -= th*0.016;
-  float abut = sdCylinder(p - vec3(0.0, 0.20, 0.0), 0.10, 0.085);
-  float crown = sdRoundBox(p - vec3(0.0, 0.44, 0.0), vec3(0.26,0.16,0.24), 0.10);
+  post -= (sin(p.y*42.0)*0.5 + 0.5)*0.016;
+  float abut  = sdCylinder(p - vec3(0.0, 0.20, 0.0), 0.10, 0.085);
+  float crown = sdEllipsoid(p - vec3(0.0, 0.46, 0.0), vec3(0.275, 0.215, 0.250));
   return smin(smin(post, abut, 0.05), crown, 0.07);
 }
 
@@ -89,7 +110,7 @@ void main(){
   float t = u_time*0.26;
   float ca = cos(t), sa = sin(t);
 
-  vec3 ro = vec3(0.0, 0.12, 3.05);
+  vec3 ro = vec3(0.0, 0.10, 2.75);
   vec3 rd = normalize(vec3(uv, -2.1));
 
   // rotate the world instead of the camera

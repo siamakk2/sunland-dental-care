@@ -68,7 +68,7 @@ export default function Home() {
             <div className="pointer-events-none absolute -left-6 top-6 h-32 w-32 rounded-full bg-brand/90 blur-[2px]" aria-hidden="true"></div>
             <div className="relative aspect-square w-full rounded-[2rem] border border-line bg-gradient-to-br from-white via-parchment to-white shadow-[0_30px_80px_-30px_rgba(0,0,0,.35)]">
               <ToothCanvas className="absolute inset-3" poster="/images/ph-implantmodel.jpg" />
-              <p className="absolute bottom-4 left-0 right-0 text-center text-[0.68rem] font-bold uppercase tracking-[0.18em] text-accent-deep">
+              <p className="absolute bottom-4 left-0 right-0 text-center text-[0.68rem] font-bold uppercase tracking-[0.18em] text-ink-soft">
                 3D-guided implant planning
               </p>
             </div>

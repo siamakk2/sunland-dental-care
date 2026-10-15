@@ -4,6 +4,7 @@ import SmileGallery from "../../components/SmileGallery";
 import { PageHero, Reviewed, FaqBlock, Cta, Prose, ReviewStrip } from "../../components/blocks";
 import OfferTable from "../../components/OfferTable";
 import OfferNote from "../../components/OfferNote";
+import ToothCanvas from "../../components/ToothCanvas";
 
 export const metadata = {
   title: "Dental Implants in Sunland, CA — Complete for $2,000",
@@ -48,6 +49,26 @@ export default function Page() {
         <p>In much of Los Angeles, an implant means three offices: a general dentist, an oral surgeon, and a restorative dentist. Here, {DOCTOR.name} performs the consultation, the placement, and the restoration herself, in the same office she has practiced in since {DOCTOR.established}. Continuity is quality control.</p>
       </Prose>
       <SmileGallery treatment="dental-implants" />
+      <section className="border-y border-line bg-deep text-cream">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-[.9fr_1.1fr]">
+          <div className="reveal relative mx-auto aspect-square w-full max-w-sm">
+            <ToothCanvas className="absolute inset-0" poster="/images/ph-implantmodel.jpg" />
+          </div>
+          <div>
+            <span className="accent-bar" aria-hidden="true"></span>
+            <h2 className="t-section font-bold">Planned in 3D before anything begins</h2>
+            <p className="t-lead mt-4 text-cream/80">
+              Your jaw is imaged in three dimensions and the implant position, angle, and depth are decided
+              on screen — not estimated during surgery. That planning is why the surgical site stays small
+              and why most patients describe the recovery as easier than they expected.
+            </p>
+            <p className="mt-4 text-cream/70">
+              The same dentist who plans the case places the implant and fits the final crown.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <OfferTable />
       <FaqBlock title="Dental implant questions" faqs={FAQS} />
       <Cta title="Find out if an implant is right for you" body={`Bring your questions — the consultation and 3D imaging are part of the $2,000 complete price. Call ${NAP.phone}.`} />
