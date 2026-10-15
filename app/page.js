@@ -4,6 +4,8 @@ import { CITIES } from "../lib/cities";
 import { Schema, graph, faqSchema, breadcrumbs } from "../lib/schema";
 import { ReviewStrip } from "../components/blocks";
 import Testimonials from "../components/Testimonials";
+import OfferNote from "../components/OfferNote";
+import ToothCanvas from "../components/ToothCanvas";
 
 const HOME_FAQS = [
   ["How do I choose a dentist in Sunland-Tujunga?",
@@ -25,41 +27,58 @@ export default function Home() {
     <>
       <Schema>{graph(faqSchema(HOME_FAQS), breadcrumbs([{ name: "Home", path: "/" }]))}</Schema>
 
-      {/* ── Hero: split, arch frame + red circle (logo motif) ── */}
-      <section className="border-b border-line bg-cream">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 md:grid-cols-[1.08fr_.92fr] md:py-20">
+      {/* ── Hero: live 3D dental element ── */}
+      <section className="relative overflow-hidden border-b border-line bg-cream">
+        {/* cyan scan field, barely there */}
+        <div className="scanline pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
+        <div className="pointer-events-none absolute -right-24 -top-24 h-[30rem] w-[30rem] rounded-full bg-accent/10 blur-3xl" aria-hidden="true"></div>
+
+        <div className="relative mx-auto grid max-w-6xl items-center gap-8 px-4 py-10 md:grid-cols-[1.05fr_.95fr] md:py-16">
           <div>
             <span className="accent-bar" aria-hidden="true"></span>
-            <p className="chip">Sunland-Tujunga's implant-focused dental practice · Est. {DOCTOR.established}</p>
-            <h1 className="mt-5 text-4xl font-bold leading-[1.08] md:text-6xl">
-              Four decades of dentistry. One standard of care: <em className="text-brand">minimally invasive.</em>
+            <p className="chip">Sunland-Tujunga · Est. {DOCTOR.established}</p>
+            <h1 className="t-hero mt-5 font-bold">
+              Four decades of dentistry.<br />
+              One standard: <em className="not-italic text-brand">minimally invasive.</em>
             </h1>
-            <p className="mt-6 max-w-xl text-lg font-medium text-ink-soft">
-              Sunland Dental Care is the practice of <Link href="/dr-emami" className="font-bold text-ink underline decoration-brand decoration-2 underline-offset-4 hover:text-brand">{DOCTOR.name}</Link> —
-              a dentist with a clinical focus on implant dentistry, with {DOCTOR.yearsExperience} years of clinical experience and thousands of implants placed.
-              Every treatment starts with the same principle: preserve what's healthy, fix only what isn't.
+            <p className="t-lead mt-6 max-w-xl font-medium text-ink-soft">
+              Sunland Dental Care is the practice of{" "}
+              <Link href="/dr-emami" className="font-bold text-ink underline decoration-brand decoration-2 underline-offset-4 hover:text-brand">{DOCTOR.name}</Link> —
+              a dentist with a clinical focus on implant dentistry and {DOCTOR.yearsExperience} years in practice.
+              Every case is planned in 3D before surgery begins.
             </p>
             <p className="mt-6 text-base font-semibold text-ink">
               Se habla español · <span lang="fa">فارسی صحبت می‌کنیم</span> · English
             </p>
-            <div className="mt-5 flex flex-wrap gap-3">
-              <a href={`tel:${NAP.phoneIntl}`} className="rounded-full bg-brand px-7 py-3.5 text-lg font-bold text-white shadow-lg shadow-brand/25 hover:bg-brand-dark">Call {NAP.phone}</a>
-              <Link href="/dental-implants" className="rounded-full border-2 border-ink px-7 py-3.5 text-lg font-bold hover:border-brand hover:text-brand">$2,000 Complete Implants →</Link>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href={`tel:${NAP.phoneIntl}`} className="rounded-full bg-brand px-7 py-3.5 text-lg font-bold text-white shadow-lg shadow-brand/30 transition hover:bg-brand-dark">
+                Call {NAP.phone}
+              </a>
+              <Link href="/contact" className="rounded-full border-2 border-ink px-7 py-3.5 text-lg font-bold transition hover:border-brand hover:text-brand">
+                Request an Appointment
+              </Link>
             </div>
+            <p className="mt-4 text-sm font-semibold">
+              <Link href="/dental-implants" className="text-brand underline underline-offset-4">$2,000 complete single implant →</Link>
+            </p>
           </div>
-          <div className="relative mx-auto w-72 md:w-80 lg:w-96">
-            <div className="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-brand" aria-hidden="true"></div>
-            <div className="arch absolute -right-5 -bottom-5 h-full w-full border-2 border-brand/25" aria-hidden="true"></div>
-            <img src="/images/ph-reception.jpg" alt="Dr. Mahvash Emami, DDS at Sunland Dental Care"
-                 className="arch relative w-full border border-line object-cover shadow-2xl"
-                 style={{ aspectRatio: "5/6", objectPosition: "center 12%" }} />
+
+          {/* the 3D element */}
+          <div className="relative mx-auto w-full max-w-md">
+            <div className="pointer-events-none absolute -left-6 top-6 h-32 w-32 rounded-full bg-brand/90 blur-[2px]" aria-hidden="true"></div>
+            <div className="relative aspect-square w-full rounded-[2rem] border border-line bg-gradient-to-br from-white via-parchment to-white shadow-[0_30px_80px_-30px_rgba(0,0,0,.35)]">
+              <ToothCanvas className="absolute inset-3" poster="/images/ph-implantmodel.jpg" />
+              <p className="absolute bottom-4 left-0 right-0 text-center text-[0.68rem] font-bold uppercase tracking-[0.18em] text-accent-deep">
+                3D-guided implant planning
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── Stats band ── */}
-      <section className="border-b border-line bg-white">
-        <dl className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-8 md:grid-cols-4">
+      <section className="border-b border-line bg-parchment">
+        <dl className="reveal mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-8 md:grid-cols-4">
           {[[`${DOCTOR.yearsExperience} yrs`, "Clinical experience"], [String(DOCTOR.established), "Serving Sunland since"], ["1000s", "Implants placed"], ["$2,000", "Complete implant, fixed price"]].map(([v, l]) => (
             <div key={l} className="flex items-center gap-3">
               <dt className="display flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-brand text-center text-lg font-bold leading-tight text-white">{v}</dt>
@@ -73,7 +92,7 @@ export default function Home() {
 
       {/* ── Services ── */}
       <section className="mx-auto max-w-6xl px-4 py-16">
-        <h2 className="text-3xl font-bold md:text-4xl">Complete care, one Foothill Boulevard office</h2>
+        <h2 className="t-section font-bold">Complete care, one Foothill Boulevard office</h2>
         <p className="mt-3 max-w-2xl text-ink-soft">
           Consultation, 3D imaging, surgery, and restoration all happen in-house — no bouncing between specialists across Los Angeles.
         </p>
@@ -95,7 +114,7 @@ export default function Home() {
       </section>
 
       {/* ── Philosophy + doctor photo ── */}
-      <section className="border-y border-line bg-ink text-cream">
+      <section className="border-y border-line bg-deep text-cream">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-[1fr_.8fr]">
           <div>
             <p className="eyebrow text-brand-bright">The philosophy</p>
@@ -123,7 +142,7 @@ export default function Home() {
 
       {/* ── Offer ── */}
       <section className="mx-auto max-w-6xl px-4 py-16">
-        <div className="rounded-3xl bg-brand px-6 py-12 text-white md:px-12">
+        <div className="reveal relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand to-brand-dark px-6 py-12 text-white shadow-2xl shadow-brand/20 md:px-12">
           <h2 className="max-w-2xl text-3xl font-semibold md:text-4xl">{OFFER.headline}</h2>
           <p className="mt-4 max-w-2xl text-white/85">
             {OFFER.includes.join(", ").replace(/, ([^,]*)$/, ", and your $1").toLowerCase()} — {OFFER.note.toLowerCase()}
@@ -140,7 +159,7 @@ export default function Home() {
           <img src="/images/ph-headshot.jpg" alt="Dr. Mahvash Emami, DDS" className="mx-auto w-48 rounded-3xl border border-line shadow md:w-full" />
           <div>
             <span className="accent-bar" aria-hidden="true"></span>
-            <h2 className="text-3xl font-bold">A note from Dr. Emami</h2>
+            <h2 className="t-section font-bold">A note from Dr. Emami</h2>
             <p className="mt-4 text-lg text-ink-soft">
               "I opened this office in 1991 because I wanted to practice dentistry the way I'd want it done for my own
               family — carefully, honestly, and without rushing anyone. Forty years in, that hasn't changed. If you've been
