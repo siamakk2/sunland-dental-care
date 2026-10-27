@@ -1,15 +1,37 @@
 import { NAP, DOCTOR, OFFER } from "../../lib/practice";
-import { Schema, graph, breadcrumbs, faqSchema, serviceSchema, webPage } from "../../lib/schema";
+import { Schema, graph, breadcrumbs, faqSchema, serviceSchema, webPage, videoSchema } from "../../lib/schema";
+import { IMPLANT_VIDEO } from "../../lib/video";
 import SmileGallery from "../../components/SmileGallery";
 import { PageHero, Reviewed, FaqBlock, Cta, Prose, ReviewStrip } from "../../components/blocks";
 import OfferTable from "../../components/OfferTable";
 import OfferNote from "../../components/OfferNote";
 import ToothCanvas from "../../components/ToothCanvas";
+import VideoFeature from "../../components/VideoFeature";
 
 export const metadata = {
   title: "Dental Implants in Sunland, CA — Complete for $2,000",
-  description: `Complete single dental implants for $2,000 fixed — consultation, 3D imaging, guided surgery, and crown, all in-house by ${DOCTOR.name}. Thousands placed over ${DOCTOR.yearsExperience} years. Sunland, CA.`,
+  description: `Complete single dental implants for $2,000 fixed — consultation, 3D imaging, guided surgery, and crown, all in-house by ${DOCTOR.name}. Watch the 37-second video, read the full transcript, and see exactly what the price covers. Sunland, CA.`,
   alternates: { canonical: "/dental-implants", languages: { "en-US": "/dental-implants", "es-US": "/es/implantes-dentales" } },
+  openGraph: {
+    type: "video.other",
+    title: "Dental Implants in Sunland, CA — Complete for $2,000",
+    description: IMPLANT_VIDEO.description,
+    url: IMPLANT_VIDEO.pageUrl,
+    images: [{ url: `/media/${IMPLANT_VIDEO.slug}-poster.jpg`, width: 1080, height: 1920, alt: IMPLANT_VIDEO.name }],
+    videos: [{
+      url: IMPLANT_VIDEO.contentUrl,
+      secureUrl: IMPLANT_VIDEO.contentUrl,
+      type: "video/mp4",
+      width: IMPLANT_VIDEO.width,
+      height: IMPLANT_VIDEO.height,
+    }],
+  },
+  twitter: {
+    card: "player",
+    title: "A complete dental implant for $2,000 — Sunland Dental Care",
+    description: IMPLANT_VIDEO.description,
+    images: [`/media/${IMPLANT_VIDEO.slug}-poster.jpg`],
+  },
 };
 
 const FAQS = [
@@ -28,13 +50,14 @@ const FAQS = [
 export default function Page() {
   return (
     <>
-      <Schema>{graph(serviceSchema({ name: "Dental Implants", path: "/dental-implants", description: "Complete single dental implant — consultation, 3D imaging, guided surgery, and crown — for $2,000 fixed at Sunland Dental Care in Sunland, CA.", price: "2000" }), webPage({ path: "/dental-implants", name: "Dental Implants" }), faqSchema(FAQS), breadcrumbs([
+      <Schema>{graph(serviceSchema({ name: "Dental Implants", path: "/dental-implants", description: "Complete single dental implant — consultation, 3D imaging, guided surgery, and crown — for $2,000 fixed at Sunland Dental Care in Sunland, CA.", price: "2000" }), webPage({ path: "/dental-implants", name: "Dental Implants" }), videoSchema(IMPLANT_VIDEO), faqSchema(FAQS), breadcrumbs([
         { name: "Home", path: "/" }, { name: "Dental Implants", path: "/dental-implants" }]))}</Schema>
       <PageHero image="/images/ph-consult.jpg" pos="center 22%" eyebrow="Implantology · 3D-guided surgery"
         title={<>A complete dental implant for <span className="text-brand">$2,000</span>. Truly complete.</>}
         lead="In the world of implantology, there is no substitute for experience. Dr. Emami has spent four decades and thousands of implants perfecting a process that is precise, minimally invasive, and honestly priced." />
       <Reviewed />
       <ReviewStrip />
+      <VideoFeature />
       <Prose>
         <h2>What "complete" means here</h2>
         <p>Many advertised implant prices cover only the titanium post — the crown, imaging, and surgical planning arrive later as separate bills. At Sunland Dental Care, the fixed price covers the entire journey:</p>
